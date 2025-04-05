@@ -1,0 +1,252 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { ThemeToggle } from "./ThemeToggle";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { NavLink } from "./navigation/types";
+import { AboutDropdown } from "./navigation/AboutDropdown";
+import { CoursesDropdown } from "./navigation/CoursesDropdown";
+
+// Logo component
+const Logo = ({ isScrolled }: { isScrolled: boolean }) => (
+  <Link href="/" className="flex items-center">
+    <div className="relative">
+      <Image 
+        src="/images/logo.png" 
+        alt="Urbana School of Science" 
+        width={isScrolled ? 150 : 180} 
+        height={isScrolled ? 50 : 60} 
+        className="h-auto transition-all block dark:hidden"
+        priority
+      />
+      <Image 
+        src="/images/logo-dark.png" 
+        alt="Urbana School of Science" 
+        width={isScrolled ? 150 : 180} 
+        height={isScrolled ? 50 : 60} 
+        className="h-auto transition-all hidden dark:block"
+        priority
+      />
+    </div>
+  </Link>
+);
+
+// Main Navigation component
+const Navigation = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const [coursesDropdownOpen, setCoursesDropdownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const aboutDropdownRef = useRef<HTMLDivElement>(null);
+  const coursesDropdownRef = useRef<HTMLDivElement>(null);
+
+  // Navigation data
+  const navLinks: NavLink[] = [
+    { name: "About Us", path: "/about", hasDropdown: true, dropdownType: 'about' },
+    { name: "Courses", path: "/courses", hasDropdown: true, dropdownType: 'courses' },
+    { name: "Admissions", path: "/admissions" },
+    { name: "Student Zone", path: "/student-zone" },
+    { name: "Contact", path: "/contact" },
+  ];
+
+  // Event handlers
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleAboutDropdown = () => {
+    setAboutDropdownOpen(!aboutDropdownOpen);
+    if (coursesDropdownOpen) setCoursesDropdownOpen(false);
+  };
+  const toggleCoursesDropdown = () => {
+    setCoursesDropdownOpen(!coursesDropdownOpen);
+    if (aboutDropdownOpen) setAboutDropdownOpen(false);
+  };
+  const closeDropdowns = () => {
+    setAboutDropdownOpen(false);
+    setCoursesDropdownOpen(false);
+    setIsMenuOpen(false);
+  };
+
+  // Handle scroll event to detect when to shrink the navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (aboutDropdownRef.current && !aboutDropdownRef.current.contains(event.target as Node)) {
+        setAboutDropdownOpen(false);
+      }
+      if (coursesDropdownRef.current && !coursesDropdownRef.current.contains(event.target as Node)) {
+        setCoursesDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Helper function to get link classes
+  const getLinkClasses = (path: string, isMobile = false) => {
+    const baseClasses = "font-oswald tracking-wider transition-colors";
+    const mobileClasses = isMobile ? "block text-base" : "text-sm";
+    const paddingClasses = isMobile ? "px-3 py-2" : isScrolled ? "px-3 py-1" : "px-3 py-2";
+    const activeClasses = pathname.startsWith(path)
+      ? "text-bright-red font-bold dark:text-bright-red"
+      : "text-rich-blue dark:text-white hover:text-bright-red dark:hover:text-bright-red";
+    
+    return `${baseClasses} ${mobileClasses} ${paddingClasses} rounded-md uppercase ${activeClasses}`;
+  };
+
+  return (
+    <nav className={`bg-white dark:bg-gray-900 shadow-md fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
+      <div className="container mx-auto px-4">
+        <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-16' : 'h-20'}`}>
+          <div className="flex items-center">
+            <Logo isScrolled={isScrolled} />
+          </div>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-4">
+            {navLinks.map((link) => (
+              link.hasDropdown ? (
+                <div 
+                  key={link.path} 
+                  className="relative" 
+                  ref={link.dropdownType === 'about' ? aboutDropdownRef : coursesDropdownRef}
+                >
+                  <button
+                    onClick={link.dropdownType === 'about' ? toggleAboutDropdown : toggleCoursesDropdown}
+                    className={`${getLinkClasses(link.path)} flex items-center`}
+                  >
+                    {link.name}
+                    <ChevronDown 
+                      className={`ml-1 w-4 h-4 transition-transform ${
+                        (link.dropdownType === 'about' && aboutDropdownOpen) || 
+                        (link.dropdownType === 'courses' && coursesDropdownOpen) 
+                          ? 'rotate-180' 
+                          : ''
+                      }`} 
+                    />
+                  </button>
+                  
+                  {link.dropdownType === 'about' ? (
+                    <AboutDropdown 
+                      isOpen={aboutDropdownOpen} 
+                      onClose={() => setAboutDropdownOpen(false)} 
+                    />
+                  ) : (
+                    <CoursesDropdown 
+                      isOpen={coursesDropdownOpen} 
+                      onClose={() => setCoursesDropdownOpen(false)} 
+                    />
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={link.path}
+                  href={link.path}
+                  className={getLinkClasses(link.path)}
+                >
+                  {link.name}
+                </Link>
+              )
+            ))}
+            <ThemeToggle />
+          </div>
+          
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden flex items-center">
+            <ThemeToggle />
+            <button
+              onClick={toggleMenu}
+              className="ml-2 inline-flex items-center justify-center p-2 rounded-md text-rich-blue dark:text-white hover:text-bright-red dark:hover:text-bright-red focus:outline-none transition-colors"
+              aria-expanded={isMenuOpen ? "true" : "false"}
+            >
+              <span className="sr-only">Open main menu</span>
+              {isMenuOpen ? (
+                <X className="h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Menu className="h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      {/* Mobile menu */}
+      <div 
+        className={`${isMenuOpen ? "block" : "hidden"} md:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-800`}
+      >
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          {navLinks.map((link) => (
+            <div key={link.path}>
+              {link.hasDropdown ? (
+                <>
+                  <button
+                    onClick={() => {
+                      if (link.dropdownType === 'about') {
+                        setAboutDropdownOpen(!aboutDropdownOpen);
+                        if (coursesDropdownOpen) setCoursesDropdownOpen(false);
+                      } else {
+                        setCoursesDropdownOpen(!coursesDropdownOpen);
+                        if (aboutDropdownOpen) setAboutDropdownOpen(false);
+                      }
+                    }}
+                    className={`${getLinkClasses(link.path, true)} w-full text-left flex justify-between items-center`}
+                  >
+                    {link.name}
+                    <ChevronDown 
+                      className={`w-4 h-4 transition-transform ${
+                        (link.dropdownType === 'about' && aboutDropdownOpen) || 
+                        (link.dropdownType === 'courses' && coursesDropdownOpen) 
+                          ? 'rotate-180' 
+                          : ''
+                      }`}
+                    />
+                  </button>
+                  
+                  {link.dropdownType === 'about' ? (
+                    <AboutDropdown 
+                      isOpen={aboutDropdownOpen} 
+                      onClose={closeDropdowns} 
+                      isMobile={true}
+                    />
+                  ) : (
+                    <CoursesDropdown 
+                      isOpen={coursesDropdownOpen} 
+                      onClose={closeDropdowns} 
+                      isMobile={true}
+                    />
+                  )}
+                </>
+              ) : (
+                <Link
+                  href={link.path}
+                  className={getLinkClasses(link.path, true)}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navigation;
