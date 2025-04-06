@@ -40,7 +40,7 @@ export default function FacultyStaff() {
       department: "Physics",
       education: "M.Sc. in Physics",
       experience: "10+ years",
-      image: "/images/faculty/ram-tiwari.jpg"
+      image: "/images/faculty/Ram-Tiwari.jpg"
     },
     {
       name: "Michael Dhungana",
@@ -56,7 +56,7 @@ export default function FacultyStaff() {
       department: "Physics",
       education: "M.Sc. in Physics",
       experience: "7+ years",
-      image: "/images/faculty/sambhu-sah.jpg"
+      image: "/images/faculty/Sambhu-Sah.jpg"
     },
     {
       name: "SS Mandal",
@@ -72,9 +72,9 @@ export default function FacultyStaff() {
       department: "Physics",
       education: "M.Sc. in Physics",
       experience: "6+ years",
-      image: "/images/faculty/binod-baral.jpg"
+      image: "/images/faculty/Binod-Baral.jpg"
     },
-    // Original faculty members
+
     
 
   
@@ -86,7 +86,7 @@ export default function FacultyStaff() {
       department: "Chemistry",
       education: "M.Sc. in Chemistry",
       experience: "8+ years",
-      image: "/images/faculty/bibek-bhattarai.jpg"
+      image: "/images/faculty/Bibek-Bhattarai.jpg"
     },
     {
       name: "Birendra Thapa",
@@ -94,7 +94,7 @@ export default function FacultyStaff() {
       department: "Chemistry",
       education: "M.Sc. in Chemistry",
       experience: "9+ years",
-      image: "/images/faculty/birendra-thapa.jpg"
+      image: "/images/faculty/Birendra-Thapa.jpg"
     },
     {
       name: "Manoj Sah",
@@ -102,7 +102,7 @@ export default function FacultyStaff() {
       department: "Chemistry",
       education: "M.Sc. in Chemistry",
       experience: "7+ years",
-      image: "/images/faculty/manoj-sah.jpg"
+      image: "/images/faculty/Manoj-Sah.jpg"
     },
     {
       name: "Binod Yadav",
@@ -110,7 +110,7 @@ export default function FacultyStaff() {
       department: "Chemistry",
       education: "M.Sc. in Chemistry",
       experience: "8+ years",
-      image: "/images/faculty/binod-yadav.jpg"
+      image: "/images/faculty/Binod-Yadav.jpg"
     },
     {
       name: "Mahesh Poudel",
@@ -126,7 +126,7 @@ export default function FacultyStaff() {
       department: "Chemistry",
       education: "M.Sc. in Chemistry",
       experience: "7+ years",
-      image: "/images/faculty/rajesh-jga.jpg"
+      image: "/images/faculty/Rajesh-Jga.jpg"
     },
     {
       name: "Santosh Lamichhane",
@@ -142,7 +142,7 @@ export default function FacultyStaff() {
       department: "Biology",
       education: "M.Sc. in Zoology",
       experience: "9+ years",
-      image: "/images/faculty/bhagat-sir.jpg"
+      image: "/images/faculty/Bhagat-Sir.jpg"
     },
     {
       name: "Dr Madhav Rijal",
@@ -150,7 +150,7 @@ export default function FacultyStaff() {
       department: "Biology",
       education: "Ph.D. in Zoology",
       experience: "10+ years",
-      image: "/images/faculty/dr-madhav-rijal.jpg"
+      image: "/images/faculty/Dr-Madhav-Rijal.jpg"
     },
     {
       name: "Kamal Nepal",
@@ -158,7 +158,7 @@ export default function FacultyStaff() {
       department: "Biology",
       education: "M.Sc. in Zoology",
       experience: "7+ years",
-      image: "/images/faculty/kamal-nepal.jpg"
+      image: "/images/faculty/Kamal-Nepal.jpg"
     },
     {
       name: "Mahendra Yadav",
@@ -166,7 +166,7 @@ export default function FacultyStaff() {
       department: "Biology",
       education: "M.Sc. in Zoology",
       experience: "8+ years",
-      image: "/images/faculty/mahendra-yadav.jpg"
+      image: "/images/faculty/Mahendra-Yadav.jpg"
     },
     // Botany faculty from the image
     {
@@ -175,7 +175,7 @@ export default function FacultyStaff() {
       department: "Biology",
       education: "Ph.D. in Botany",
       experience: "12+ years",
-      image: "/images/faculty/dr-ravi-bikram.jpg"
+      image: "/images/faculty/Dr-Ravi-Bikram.jpg"
     },
     {
       name: "Dr Kabir Pokhrel",
@@ -183,7 +183,7 @@ export default function FacultyStaff() {
       department: "Biology",
       education: "Ph.D. in Botany",
       experience: "10+ years",
-      image: "/images/faculty/kabir-pokhrel.jpg"
+      image: "/images/faculty/Kabir-Pokhrel.jpg"
     },
     // Mathematics faculty
     {
@@ -192,7 +192,7 @@ export default function FacultyStaff() {
       department: "Mathematics",
       education: "M.Sc. in Mathematics",
       experience: "8+ years",
-      image: "/images/faculty/jyoti-maam.jpg"
+      image: "/images/faculty/Jyoti-Maam.jpg"
     },
     {
       name: "Yam Pokhrel",
@@ -200,7 +200,7 @@ export default function FacultyStaff() {
       department: "Mathematics",
       education: "M.Sc. in Mathematics",
       experience: "9+ years",
-      image: "/images/faculty/yam-pokhrel.jpg"
+      image: "/images/faculty/Yam-Pokhrel.jpg"
     },
     // English faculty
     {
@@ -209,7 +209,7 @@ export default function FacultyStaff() {
       department: "English",
       education: "M.A. in English",
       experience: "7+ years",
-      image: "/images/faculty/deepak-shrestha.jpg"
+      image: "/images/faculty/Deepak-Shrestha.jpg"
     },
     // Computer Science faculty
     {
@@ -218,7 +218,7 @@ export default function FacultyStaff() {
       department: "Computer Science",
       education: "M.Sc. in Computer Science",
       experience: "8+ years",
-      image: "/images/faculty/sahodhar.jpg"
+      image: "/images/faculty/Sahodhar.jpg"
     },
   ];
 
