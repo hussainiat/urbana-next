@@ -10,8 +10,24 @@ export default function FacultyStaff() {
 
   const facultyMembers = [
     {
-      name: "Dr. Rajesh Sharma",
+      name: "Rabindra Sharma",
       position: "Principal",
+      department: "Administration",
+      education: "Ph.D. in Education, Harvard University",
+      experience: "25+ years",
+      image: "/images/faculty/principal.jpg"
+    },
+    {
+      name: "Rejina Rai",
+      position: "Vice Principal",
+      department: "Administration",
+      education: "Ph.D. in Education, Harvard University",
+      experience: "25+ years",
+      image: "/images/faculty/principal.jpg"
+    },
+    {
+      name: "Ram S Dani",
+      position: "Academic Director",
       department: "Administration",
       education: "Ph.D. in Education, Harvard University",
       experience: "25+ years",
