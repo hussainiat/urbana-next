@@ -36,7 +36,7 @@ export default function FacultyStaff() {
     // Physics faculty from the image
     {
       name: "Ram Tiwari",
-      position: "Senior Faculty",
+      position: "Faculty",
       department: "Physics",
       education: "M.Sc. in Physics",
       experience: "10+ years",
