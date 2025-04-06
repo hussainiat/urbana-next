@@ -1,8 +1,13 @@
+'use client'
+
 import { Users } from "lucide-react";
 import AboutTemplate from "../AboutTemplate";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function FacultyStaff() {
+  const [activeTab, setActiveTab] = useState("All");
+
   const facultyMembers = [
     {
       name: "Dr. Rajesh Sharma",
@@ -12,57 +17,210 @@ export default function FacultyStaff() {
       experience: "25+ years",
       image: "/images/faculty/principal.jpg"
     },
+    // Physics faculty from the image
     {
-      name: "Dr. Priya Patel",
-      position: "Head of Science Department",
+      name: "Ram Tiwari",
+      position: "Senior Faculty",
       department: "Physics",
-      education: "Ph.D. in Physics, MIT",
-      experience: "18 years",
-      image: "/images/faculty/science-head.jpg"
+      education: "M.Sc. in Physics",
+      experience: "10+ years",
+      image: "/images/faculty/ram-tiwari.jpg"
     },
     {
-      name: "Prof. Anand Kumar",
-      position: "Senior Faculty",
-      department: "Mathematics",
-      education: "M.Sc. in Mathematics, IIT Delhi",
-      experience: "20 years",
-      image: "/images/faculty/math-faculty.jpg"
+      name: "Michael Dhungana",
+      position: "Faculty",
+      department: "Physics",
+      education: "M.Sc. in Physics",
+      experience: "8+ years",
+      image: "/images/faculty/MichealDhungana.jpg"
     },
     {
-      name: "Dr. Meera Singh",
-      position: "Senior Faculty",
+      name: "Sambhu Sah",
+      position: "Faculty",
+      department: "Physics",
+      education: "M.Sc. in Physics",
+      experience: "7+ years",
+      image: "/images/faculty/sambhu-sah.jpg"
+    },
+    {
+      name: "SS Mandal",
+      position: "Faculty",
+      department: "Physics",
+      education: "M.Sc. in Physics",
+      experience: "9+ years",
+      image: "/images/faculty/ss-mandal.jpg"
+    },
+    {
+      name: "Binod Baral",
+      position: "Faculty",
+      department: "Physics",
+      education: "M.Sc. in Physics",
+      experience: "6+ years",
+      image: "/images/faculty/binod-baral.jpg"
+    },
+    // Original faculty members
+    
+
+  
+    
+    // Chemistry faculty from the image
+    {
+      name: "Bibek Bhattarai",
+      position: "Faculty",
       department: "Chemistry",
-      education: "Ph.D. in Chemistry, University of Cambridge",
-      experience: "15 years",
-      image: "/images/faculty/chemistry-faculty.jpg"
+      education: "M.Sc. in Chemistry",
+      experience: "8+ years",
+      image: "/images/faculty/bibek-bhattarai.jpg"
     },
     {
-      name: "Prof. Sanjay Gupta",
-      position: "Senior Faculty",
+      name: "Birendra Thapa",
+      position: "Faculty",
+      department: "Chemistry",
+      education: "M.Sc. in Chemistry",
+      experience: "9+ years",
+      image: "/images/faculty/birendra-thapa.jpg"
+    },
+    {
+      name: "Manoj Sah",
+      position: "Faculty",
+      department: "Chemistry",
+      education: "M.Sc. in Chemistry",
+      experience: "7+ years",
+      image: "/images/faculty/manoj-sah.jpg"
+    },
+    {
+      name: "Binod Yadav",
+      position: "Faculty",
+      department: "Chemistry",
+      education: "M.Sc. in Chemistry",
+      experience: "8+ years",
+      image: "/images/faculty/binod-yadav.jpg"
+    },
+    {
+      name: "Mahesh Poudel",
+      position: "Faculty",
+      department: "Chemistry",
+      education: "M.Sc. in Chemistry",
+      experience: "6+ years",
+      image: "/images/faculty/mahesh.jpg"
+    },
+    {
+      name: "Rajesh Shah",
+      position: "Faculty",
+      department: "Chemistry",
+      education: "M.Sc. in Chemistry",
+      experience: "7+ years",
+      image: "/images/faculty/rajesh-jga.jpg"
+    },
+    {
+      name: "Santosh Lamichhane",
+      position: "Faculty",
+      department: "Chemistry",
+      education: "M.Sc. in Chemistry",
+      experience: "8+ years",
+      image: "/images/faculty/santosh-lamichhane.jpg"
+    },
+    {
+      name: "Rakesh Bhagat",
+      position: "Faculty",
       department: "Biology",
-      education: "M.Sc. in Biology, Delhi University",
-      experience: "12 years",
-      image: "/images/faculty/biology-faculty.jpg"
+      education: "M.Sc. in Zoology",
+      experience: "9+ years",
+      image: "/images/faculty/bhagat-sir.jpg"
     },
     {
-      name: "Ms. Neha Verma",
-      position: "Counselor",
-      department: "Student Support",
-      education: "M.A. in Psychology, University of Mumbai",
-      experience: "10 years",
-      image: "/images/faculty/counselor.jpg"
-    }
+      name: "Dr Madhav Rijal",
+      position: "Faculty",
+      department: "Biology",
+      education: "Ph.D. in Zoology",
+      experience: "10+ years",
+      image: "/images/faculty/dr-madhav-rijal.jpg"
+    },
+    {
+      name: "Kamal Nepal",
+      position: "Faculty",
+      department: "Biology",
+      education: "M.Sc. in Zoology",
+      experience: "7+ years",
+      image: "/images/faculty/kamal-nepal.jpg"
+    },
+    {
+      name: "Mahendra Yadav",
+      position: "Faculty",
+      department: "Biology",
+      education: "M.Sc. in Zoology",
+      experience: "8+ years",
+      image: "/images/faculty/mahendra-yadav.jpg"
+    },
+    // Botany faculty from the image
+    {
+      name: "Dr Ravi Bikram",
+      position: "Faculty",
+      department: "Biology",
+      education: "Ph.D. in Botany",
+      experience: "12+ years",
+      image: "/images/faculty/dr-ravi-bikram.jpg"
+    },
+    {
+      name: "Dr Kabir Pokhrel",
+      position: "Faculty",
+      department: "Biology",
+      education: "Ph.D. in Botany",
+      experience: "10+ years",
+      image: "/images/faculty/kabir-pokhrel.jpg"
+    },
+    // Mathematics faculty
+    {
+      name: "Jyoti Mishra",
+      position: "Faculty",
+      department: "Mathematics",
+      education: "M.Sc. in Mathematics",
+      experience: "8+ years",
+      image: "/images/faculty/jyoti-maam.jpg"
+    },
+    {
+      name: "Yam Pokhrel",
+      position: "Faculty",
+      department: "Mathematics",
+      education: "M.Sc. in Mathematics",
+      experience: "9+ years",
+      image: "/images/faculty/yam-pokhrel.jpg"
+    },
+    // English faculty
+    {
+      name: "Deepak Shrestha",
+      position: "Faculty",
+      department: "English",
+      education: "M.A. in English",
+      experience: "7+ years",
+      image: "/images/faculty/deepak-shrestha.jpg"
+    },
+    // Computer Science faculty
+    {
+      name: "Sahodhar Dhungel",
+      position: "Faculty",
+      department: "Computer Science",
+      education: "M.Sc. in Computer Science",
+      experience: "8+ years",
+      image: "/images/faculty/sahodhar.jpg"
+    },
   ];
 
   const departments = [
+    "All",
     "Administration",
     "Physics",
     "Chemistry",
     "Biology",
     "Mathematics",
     "English",
-    "Student Support"
+    "Computer Science",
   ];
+
+  // Filter faculty members based on active tab
+  const filteredFaculty = activeTab === "All" 
+    ? facultyMembers 
+    : facultyMembers.filter(faculty => faculty.department === activeTab);
 
   return (
     <AboutTemplate
@@ -71,39 +229,52 @@ export default function FacultyStaff() {
       icon={<Users className="w-8 h-8 text-[#800020]" />}
     >
       <div className="mb-12">
+        {/* Department filter buttons - keeping existing code */}
         <div className="flex flex-wrap justify-center gap-3 mb-8">
-          <button className="px-4 py-2 rounded-full font-oswald text-sm uppercase tracking-wider bg-[#800020] text-white">
-            All
-          </button>
           {departments.map((dept, index) => (
             <button 
               key={index}
-              className="px-4 py-2 rounded-full font-oswald text-sm uppercase tracking-wider bg-white text-[#800020] border border-[#800020] hover:bg-[#800020] hover:text-white transition-colors"
+              className={`px-4 py-2 rounded-full font-oswald text-sm uppercase tracking-wider ${
+                activeTab === dept 
+                  ? "bg-[#800020] text-white" 
+                  : "bg-white text-[#800020] border border-[#800020] hover:bg-[#800020] hover:text-white"
+              } transition-colors`}
+              onClick={() => setActiveTab(dept)}
             >
               {dept}
             </button>
           ))}
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {facultyMembers.map((faculty, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
-              <div className="relative h-64 w-full">
+        {/* Improved faculty cards grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredFaculty.map((faculty, index) => (
+            <div 
+              key={index} 
+              className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 group"
+            >
+              {/* Improved image container with overlay effect */}
+              <div className="relative h-72 w-full overflow-hidden">
                 <Image 
                   src={faculty.image} 
                   alt={faculty.name} 
                   fill 
-                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 />
+                {/* Gradient overlay for better text visibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <div className="p-6">
-                <h3 className="font-montserrat text-xl font-bold mb-1 text-[#800020]">{faculty.name}</h3>
-                <p className="font-oswald text-sm uppercase tracking-wider text-gray-500 mb-3">{faculty.position}</p>
-                <div className="space-y-2 font-lato text-gray-600">
-                  <p><span className="font-semibold">Department:</span> {faculty.department}</p>
-                  <p><span className="font-semibold">Education:</span> {faculty.education}</p>
-                  <p><span className="font-semibold">Experience:</span> {faculty.experience}</p>
+              
+              {/* Improved card content */}
+              <div className="p-5 relative">
+                {/* Department badge */}
+                <div className="absolute -top-4 right-4 bg-[#800020] text-white text-xs font-medium py-1 px-3 rounded-full shadow-sm">
+                  {faculty.department}
                 </div>
+                
+                <h3 className="font-montserrat text-xl font-bold mb-1 text-[#800020]">{faculty.name}</h3>
+                <p className="font-oswald text-sm uppercase tracking-wider text-gray-500">{faculty.position}</p>
               </div>
             </div>
           ))}
