@@ -5,9 +5,10 @@ export type NavLink = {
   dropdownType?: 'about' | 'courses';
 };
 
-export type MenuItem = {
+export interface MenuItem {
   icon: React.ReactNode;
   title: string;
   description: string;
   path: string;
-};
+  bgColor?: string;
+}

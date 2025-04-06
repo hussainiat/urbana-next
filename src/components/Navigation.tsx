@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ThemeToggle } from "./ThemeToggle";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { NavLink } from "./navigation/types";
 import { AboutDropdown } from "./navigation/AboutDropdown";
@@ -19,15 +18,7 @@ const Logo = ({ isScrolled }: { isScrolled: boolean }) => (
         alt="Urbana School of Science" 
         width={isScrolled ? 150 : 180} 
         height={isScrolled ? 50 : 60} 
-        className="h-auto transition-all block dark:hidden"
-        priority
-      />
-      <Image 
-        src="/images/logo-dark.png" 
-        alt="Urbana School of Science" 
-        width={isScrolled ? 150 : 180} 
-        height={isScrolled ? 50 : 60} 
-        className="h-auto transition-all hidden dark:block"
+        className="h-auto transition-all"
         priority
       />
     </div>
@@ -104,14 +95,14 @@ const Navigation = () => {
     const mobileClasses = isMobile ? "block text-base" : "text-sm";
     const paddingClasses = isMobile ? "px-3 py-2" : isScrolled ? "px-3 py-1" : "px-3 py-2";
     const activeClasses = pathname.startsWith(path)
-      ? "text-bright-red font-bold dark:text-bright-red"
-      : "text-rich-blue dark:text-white hover:text-bright-red dark:hover:text-bright-red";
+      ? "text-bright-red font-bold"
+      : "text-rich-blue hover:text-bright-red";
     
     return `${baseClasses} ${mobileClasses} ${paddingClasses} rounded-md uppercase ${activeClasses}`;
   };
 
   return (
-    <nav className={`bg-white dark:bg-gray-900 shadow-md fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
+    <nav className={`bg-white shadow-md fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
       <div className="container mx-auto px-4">
         <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-16' : 'h-20'}`}>
           <div className="flex items-center">
@@ -164,15 +155,13 @@ const Navigation = () => {
                 </Link>
               )
             ))}
-            <ThemeToggle />
           </div>
           
           {/* Mobile Menu Toggle */}
           <div className="md:hidden flex items-center">
-            <ThemeToggle />
             <button
               onClick={toggleMenu}
-              className="ml-2 inline-flex items-center justify-center p-2 rounded-md text-rich-blue dark:text-white hover:text-bright-red dark:hover:text-bright-red focus:outline-none transition-colors"
+              className="ml-2 inline-flex items-center justify-center p-2 rounded-md text-rich-blue hover:text-bright-red focus:outline-none transition-colors"
               aria-expanded={isMenuOpen ? "true" : "false"}
             >
               <span className="sr-only">Open main menu</span>
@@ -188,7 +177,7 @@ const Navigation = () => {
       
       {/* Mobile menu */}
       <div 
-        className={`${isMenuOpen ? "block" : "hidden"} md:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-800`}
+        className={`${isMenuOpen ? "block" : "hidden"} md:hidden bg-white border-t border-gray-200`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {navLinks.map((link) => (

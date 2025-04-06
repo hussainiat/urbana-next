@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Montserrat, Lato, Oswald } from "next/font/google";
-import { ThemeProvider } from "next-themes";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -28,6 +27,7 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   title: "URBANA - School of Science",
   description: "Urbana provides quality education and learning opportunities",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
 };
 
 export default function RootLayout({
@@ -36,17 +36,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${montserrat.variable} ${lato.variable} ${oswald.variable} font-lato antialiased`}
+        className={`${montserrat.variable} ${lato.variable} ${oswald.variable} font-lato antialiased bg-soft-gray text-dark-gray`}
       >
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <div className="min-h-screen flex flex-col">
-            <Navigation />
-            <main className="flex-grow pt-20">{children}</main>
-            <Footer />
-          </div>
-        </ThemeProvider>
+        <div className="min-h-screen flex flex-col">
+          <Navigation />
+          <main className="flex-grow w-full max-w-[100vw] overflow-x-hidden py-12 md:py-20">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

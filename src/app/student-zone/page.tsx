@@ -1,48 +1,82 @@
+import { Book, Monitor, BookOpen, Calendar, PenTool, Users, ArrowRight } from "lucide-react";
+
 export default function StudentZone() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="font-montserrat text-3xl md:text-4xl font-bold mb-6 text-deep-maroon">Student Zone</h1>
-      <p className="font-lato text-lg mb-8">
-        Access resources, information, and services designed to enhance your learning experience at Urbana.
-      </p>
+    <div className="container mx-auto px-4 py-12">
+      <div className="text-center mb-12">
+        <h1 className="font-montserrat text-4xl md:text-5xl font-bold mb-4 text-[#800020]">Student Zone</h1>
+        <div className="w-24 h-1 bg-gradient-to-r from-[#800020] to-[#e63946] mx-auto mb-6"></div>
+        <p className="font-lato text-lg max-w-2xl mx-auto text-gray-600">
+          Access resources, information, and services designed to enhance your learning experience at Urbana.
+        </p>
+      </div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         {[
-          { title: "Learning Resources", icon: "📚" },
-          { title: "Student Portal", icon: "🖥️" },
-          { title: "Library Access", icon: "📖" },
-          { title: "Academic Calendar", icon: "📅" },
-          { title: "Exam Schedule", icon: "✏️" },
-          { title: "Student Support", icon: "🤝" }
+          { 
+            title: "Learning Resources", 
+            icon: Book,
+            description: "Access study materials, lecture notes, and supplementary resources to support your academic journey."
+          },
+          { 
+            title: "Student Portal", 
+            icon: Monitor,
+            description: "View your grades, attendance records, and course schedules through our comprehensive student portal."
+          },
+          { 
+            title: "Library Access", 
+            icon: BookOpen,
+            description: "Explore our extensive collection of books, journals, and digital resources available in our library."
+          },
+          { 
+            title: "Academic Calendar", 
+            icon: Calendar,
+            description: "Stay updated with important dates, events, and deadlines throughout the academic year."
+          },
+          { 
+            title: "Exam Schedule", 
+            icon: PenTool,
+            description: "View upcoming examination dates, times, and venues for all your enrolled courses."
+          },
+          { 
+            title: "Student Support", 
+            icon: Users,
+            description: "Connect with our dedicated support team for academic guidance, counseling, and assistance."
+          }
         ].map((item, index) => (
-          <div key={index} className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-            <div className="text-4xl mb-4">{item.icon}</div>
-            <h3 className="font-montserrat text-xl font-bold mb-2">{item.title}</h3>
-            <p className="font-lato mb-4">Access important information and resources related to {item.title.toLowerCase()}.</p>
-            <button className="font-oswald text-bright-red hover:text-red-700 uppercase tracking-wider">
-              Access Now →
+          <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+            <div className="text-[#800020] mb-4">
+              <item.icon size={40} />
+            </div>
+            <h3 className="font-montserrat text-xl font-bold mb-2 text-[#800020]">{item.title}</h3>
+            <p className="font-lato mb-4 text-gray-600">{item.description}</p>
+            <button className="font-oswald text-[#800020] hover:text-[#e63946] uppercase tracking-wider flex items-center">
+              Access Now 
+              <ArrowRight size={16} className="ml-1" />
             </button>
           </div>
         ))}
       </div>
       
-      <div className="bg-soft-gray dark:bg-gray-800 rounded-lg p-6">
-        <h2 className="font-montserrat text-2xl font-bold mb-4 text-rich-blue">Student Login</h2>
-        <p className="font-lato mb-6">Log in to access your student dashboard and resources.</p>
-        
-        <form className="max-w-md">
-          <div className="mb-4">
-            <label className="font-lato block mb-1">Student ID</label>
-            <input type="text" className="w-full p-2 border rounded" />
-          </div>
-          <div className="mb-4">
-            <label className="font-lato block mb-1">Password</label>
-            <input type="password" className="w-full p-2 border rounded" />
-          </div>
-          <button type="submit" className="font-oswald bg-rich-blue hover:bg-blue-800 text-white px-6 py-3 rounded-md uppercase tracking-wider">
-            Login
-          </button>
-        </form>
+      <div className="bg-gray-50 rounded-lg p-8 text-center border border-gray-100 shadow-sm">
+        <h2 className="font-montserrat text-2xl font-bold mb-4 text-[#800020]">Need Assistance?</h2>
+        <p className="font-lato mb-6 max-w-2xl mx-auto text-gray-600">
+          Our student support team is available to help you with any questions or concerns you may have.
+        </p>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <a 
+            href="/contact" 
+            className="inline-block font-oswald bg-[#800020] hover:bg-[#e63946] text-white px-8 py-3 rounded-md uppercase tracking-wider transition-colors"
+          >
+            Contact Support
+          </a>
+          <a 
+            href="/faq" 
+            className="inline-block font-oswald bg-white hover:bg-gray-100 text-[#800020] border border-[#800020] px-8 py-3 rounded-md uppercase tracking-wider transition-colors"
+          >
+            View FAQs
+          </a>
+        </div>
       </div>
     </div>
   );
