@@ -6,14 +6,16 @@ interface Particle {
   x: number;
   y: number;
   radius: number;
+  color: string;
   vx: number;
   vy: number;
+  type: 'atom' | 'molecule' | 'electron';
 }
 
 interface LinkData {
-  source: number;
-  target: number;
-}
+    source: number;
+    target: number;
+  }
 
 const ScienceParticles: React.FC = () => {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -33,22 +35,27 @@ const ScienceParticles: React.FC = () => {
        .attr("height", height);
     
     // Generate random particles
-    const particleCount = 30; // Reduced count for simplicity
+    const particleCount = 50;
     const particles: Particle[] = [];
+    
+    const colors = ['#FFD700', '#00BFFF', '#FF6347', '#7FFFD4', '#FF69B4'];
+    const types: ('atom' | 'molecule' | 'electron')[] = ['atom', 'molecule', 'electron'];
     
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         id: i,
         x: Math.random() * width,
         y: Math.random() * height,
-        radius: Math.random() * 4 + 2, // Smaller particles
-        vx: (Math.random() - 0.5) * 1, // Slower movement
-        vy: (Math.random() - 0.5) * 1,
+        radius: Math.random() * 8 + 3,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        type: types[Math.floor(Math.random() * types.length)]
       });
     }
     
     // Create connections between some particles
-    const links: LinkData[] = [];
+    const links: {source: number, target: number}[] = [];
     for (let i = 0; i < particleCount; i++) {
       if (Math.random() > 0.7) {
         const target = Math.floor(Math.random() * particleCount);
@@ -66,8 +73,8 @@ const ScienceParticles: React.FC = () => {
       .data(links)
       .enter()
       .append("line")
-      .attr("stroke", "rgba(255, 255, 255, 0.1)") // More subtle lines
-      .attr("stroke-width", 0.5) // Thinner lines
+      .attr("stroke", "rgba(255, 255, 255, 0.2)")
+      .attr("stroke-width", 1)
       .attr("x1", d => particles[d.source].x)
       .attr("y1", d => particles[d.source].y)
       .attr("x2", d => particles[d.target].x)
@@ -81,8 +88,28 @@ const ScienceParticles: React.FC = () => {
       .attr("cx", d => d.x)
       .attr("cy", d => d.y)
       .attr("r", d => d.radius)
-      .attr("fill", "white") // Single color
-      .attr("opacity", 0.3); // More subtle opacity
+      .attr("fill", d => d.color)
+      .attr("opacity", 0.7)
+      .attr("filter", "url(#glow)");
+    
+    // Add glow effect
+    const defs = svg.append("defs");
+    const filter = defs.append("filter")
+      .attr("id", "glow")
+      .attr("x", "-50%")
+      .attr("y", "-50%")
+      .attr("width", "200%")
+      .attr("height", "200%");
+    
+    filter.append("feGaussianBlur")
+      .attr("stdDeviation", "2.5")
+      .attr("result", "coloredBlur");
+    
+    const feMerge = filter.append("feMerge");
+    feMerge.append("feMergeNode")
+      .attr("in", "coloredBlur");
+    feMerge.append("feMergeNode")
+      .attr("in", "SourceGraphic");
     
     // Animation loop
     function animate() {

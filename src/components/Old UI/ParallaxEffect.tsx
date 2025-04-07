@@ -12,9 +12,8 @@ export default function ParallaxEffect() {
       parallaxLayers.forEach((layer) => {
         const el = layer as HTMLElement;
         const depth = parseFloat(el.getAttribute('data-depth') || '0.1');
-        // Reduced movement amount for subtlety
-        const moveX = (mouseX * depth * 50) - (depth * 25);
-        const moveY = (mouseY * depth * 50) - (depth * 25);
+        const moveX = (mouseX * depth * 100) - (depth * 50);
+        const moveY = (mouseY * depth * 100) - (depth * 50);
         
         el.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
       });
