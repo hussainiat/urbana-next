@@ -28,7 +28,7 @@ export default function HeroSection() {
             </h1>
             
             <p className="text-base md:text-lg mb-6 sm:mb-8 max-w-xl mx-auto md:mx-0 font-lato text-white/90 leading-relaxed">
-              Urbana's specialized +2 Science program prepares students for success in medical, engineering, and scientific fields with advanced curriculum and practical training.
+              Urbana&apos;s specialized +2 Science program prepares students for success in medical, engineering, and scientific fields with advanced curriculum and practical training.
             </p>
             
             {/* CTA buttons */}

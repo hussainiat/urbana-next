@@ -7,33 +7,34 @@ import HeroSection from '@/components/HeroSection';
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gray-50">
       <ParallaxEffect />
       
       {/* Hero Section Component */}
       <HeroSection />
 
-      {/* News and Notice Section */}
-      <section className="py-8 bg-white relative z-10">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      {/* News and Notice Section - Improved UI */}
+      <section className="py-12 bg-white relative z-10">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
             {/* Latest News - Left Side (3 columns) */}
             <div className="lg:col-span-3">
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center">
                   <Newspaper className="w-5 h-5 text-[#800020] mr-2" />
-                  <h3 className="font-oswald text-[#800020] text-xl uppercase tracking-wider">Latest News</h3>
+                  <h3 className="font-oswald text-[#800020] text-2xl uppercase tracking-wider">Latest News</h3>
                 </div>
                 <Link 
                   href="/news" 
-                  className="inline-flex items-center text-[#800020] hover:text-[#e63946] text-sm font-oswald tracking-wider transition-colors"
+                  className="inline-flex items-center text-[#800020] hover:text-[#9a0026] text-sm font-oswald tracking-wider transition-colors group"
                 >
                   VIEW ALL
-                  <ChevronRight className="w-4 h-4 ml-1" />
+                  <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* News cards with improved styling */}
                 {[
                   {
                     title: "Annual Science Exhibition",
@@ -57,8 +58,8 @@ export default function Home() {
                     category: "Facilities"
                   }
                 ].map((news, index) => (
-                  <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 group h-full flex flex-col">
-                    <div className="relative h-40 overflow-hidden">
+                  <div key={index} className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 group h-full flex flex-col">
+                    <div className="relative h-48 overflow-hidden">
                       <Image 
                         src={news.image} 
                         alt={news.title}
@@ -66,20 +67,20 @@ export default function Home() {
                         sizes="(max-width: 768px) 100vw, 33vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute top-2 left-2 bg-[#800020] text-white text-xs px-2 py-1 rounded-full font-oswald tracking-wider">
+                      <div className="absolute top-3 left-3 bg-[#800020] text-white text-xs px-3 py-1 rounded-full font-oswald tracking-wider shadow-sm">
                         {news.category}
                       </div>
                     </div>
-                    <div className="p-4 flex-grow flex flex-col">
+                    <div className="p-5 flex-grow flex flex-col">
                       <div className="flex items-center text-xs text-gray-500 mb-2 font-lato">
                         <Calendar className="w-3 h-3 mr-1" />
                         {news.date}
                       </div>
-                      <h3 className="font-montserrat text-base font-bold mb-2 text-[#800020] group-hover:text-[#e63946] transition-colors">{news.title}</h3>
-                      <p className="text-gray-600 text-sm mb-4 font-lato line-clamp-2 flex-grow">{news.excerpt}</p>
+                      <h3 className="font-montserrat text-lg font-bold mb-2 text-gray-800 group-hover:text-[#800020] transition-colors">{news.title}</h3>
+                      <p className="text-gray-600 text-sm mb-4 font-lato line-clamp-3 flex-grow">{news.excerpt}</p>
                       <Link 
                         href="/news" 
-                        className="inline-flex items-center text-[#800020] hover:text-[#e63946] font-oswald text-xs uppercase tracking-wider transition-colors mt-auto"
+                        className="inline-flex items-center text-[#800020] hover:text-[#9a0026] font-oswald text-xs uppercase tracking-wider transition-colors mt-auto group"
                       >
                         Read More
                         <ChevronRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -90,17 +91,18 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Vertical Notice Board - Right Side (1 column) */}
+            {/* Vertical Notice Board - Right Side with improved UI */}
             <div className="lg:col-span-1">
-              <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 h-full flex flex-col">
-                <div className="bg-gradient-to-r from-[#800020] to-[#e63946] py-3 px-4">
+              <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 h-full flex flex-col">
+                <div className="bg-gradient-to-r from-[#800020] to-[#9a0026] py-4 px-5">
                   <div className="flex items-center">
-                    <Bell className="w-4 h-4 text-white mr-2" />
-                    <h3 className="font-oswald text-white text-base uppercase tracking-wider">Notice Board</h3>
+                    <Bell className="w-5 h-5 text-white mr-2" />
+                    <h3 className="font-oswald text-white text-xl uppercase tracking-wider">Notice Board</h3>
                   </div>
                 </div>
                 
-                <div className="divide-y divide-gray-100 overflow-y-auto flex-grow" style={{ maxHeight: '350px' }}>
+                <div className="divide-y divide-gray-100 overflow-y-auto flex-grow" style={{ maxHeight: '400px' }}>
+                  {/* Notice items with improved styling */}
                   {[
                     {
                       title: "Admission Open for 2023-24",
@@ -136,9 +138,9 @@ export default function Home() {
                     <Link 
                       key={index} 
                       href={notice.link}
-                      className="block py-3 px-4 hover:bg-gray-50 transition-colors group"
+                      className="block py-4 px-5 hover:bg-gray-50 transition-colors group"
                     >
-                      <span className="text-xs font-oswald uppercase tracking-wider text-[#e63946]">{notice.category}</span>
+                      <span className="text-xs font-oswald uppercase tracking-wider text-[#e63946] bg-[#e63946]/10 px-2 py-0.5 rounded-full inline-block mb-1">{notice.category}</span>
                       <h4 className="font-montserrat text-sm font-bold mb-1 text-gray-800 group-hover:text-[#800020] transition-colors">{notice.title}</h4>
                       <div className="flex items-center text-xs text-gray-500">
                         <Calendar className="w-3 h-3 mr-1" />
@@ -148,13 +150,13 @@ export default function Home() {
                   ))}
                 </div>
                 
-                <div className="bg-gray-50 p-3 text-center border-t border-gray-100 mt-auto">
+                <div className="bg-gray-50 p-4 text-center border-t border-gray-100 mt-auto">
                   <Link 
                     href="/notices" 
-                    className="inline-flex items-center text-[#800020] hover:text-[#e63946] text-sm font-oswald tracking-wider transition-colors"
+                    className="inline-flex items-center text-[#800020] hover:text-[#9a0026] text-sm font-oswald tracking-wider transition-colors group"
                   >
                     VIEW ALL NOTICES
-                    <ChevronRight className="w-4 h-4 ml-1" />
+                    <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -165,29 +167,30 @@ export default function Home() {
 
 
       {/* Featured Programs Section with enhanced UI */}
-      <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden bg-white">
+      <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-gradient-to-b from-white to-gray-50">
         {/* Background decorative elements */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#800020]/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#e63946]/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+        <div className="absolute top-0 right-0 w-80 h-80 bg-[#800020]/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#e63946]/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
         
-        <div className="container mx-auto px-4 relative">
-          <div className="text-center mb-10 sm:mb-12 md:mb-16">
-            <div className="inline-block bg-[#800020]/10 px-3 py-1 rounded-full mb-3 font-oswald tracking-wider text-[#800020] text-xs sm:text-sm">
+        <div className="container mx-auto px-4 sm:px-6 relative">
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-block bg-[#800020]/10 px-4 py-1.5 rounded-full mb-4 font-oswald tracking-wider text-[#800020] text-sm">
               <div className="flex items-center">
-                <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-[#e63946]" />
+                <Sparkles className="w-4 h-4 mr-2 text-[#e63946]" />
                 <span>EXCELLENCE IN EDUCATION</span>
               </div>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-oswald uppercase tracking-wider text-[#800020] mb-3 sm:mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-oswald uppercase tracking-wider text-[#800020] mb-4">
               OUR FEATURED PROGRAMS
             </h2>
-            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-[#800020] to-[#e63946] mx-auto mb-4 sm:mb-6"></div>
-            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto font-lato">
+            <div className="w-20 h-1 bg-gradient-to-r from-[#800020] to-[#e63946] mx-auto mb-6"></div>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto font-lato">
               Specialized programs designed to prepare students for competitive exams and higher education.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {/* Program cards with improved styling */}
             {[
               {
                 title: "+2 Science",
@@ -217,8 +220,8 @@ export default function Home() {
                 badge: "Top Rated"
               }
             ].map((program, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:border-[#800020]/30">
-                <div className="relative h-44 sm:h-48 overflow-hidden">
+              <div key={index} className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:border-[#800020]/30">
+                <div className="relative h-52 overflow-hidden">
                   <Image 
                     src={program.image} 
                     alt={program.title}
@@ -228,81 +231,82 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent group-hover:from-[#800020]/90 transition-colors duration-300"></div>
                   
-                  {/* Badge */}
+                  {/* Badge with improved styling */}
                   {program.badge && (
-                    <div className="absolute top-2 right-2 bg-[#e63946] text-white text-xs font-bold px-2 py-0.5 rounded-full font-oswald tracking-wider flex items-center">
+                    <div className="absolute top-3 right-3 bg-[#e63946] text-white text-xs font-bold px-3 py-1 rounded-full font-oswald tracking-wider flex items-center shadow-md">
                       <Star className="w-3 h-3 mr-1" />
                       {program.badge}
                     </div>
                   )}
                   
-                  <div className="absolute bottom-2 left-3 right-3">
-                    <h3 className="text-lg sm:text-xl font-bold font-oswald text-white mb-0.5 group-hover:text-yellow-100 transition-colors duration-300">{program.title}</h3>
+                  <div className="absolute bottom-3 left-4 right-4">
+                    <h3 className="text-xl sm:text-2xl font-bold font-oswald text-white mb-1 group-hover:text-yellow-100 transition-colors duration-300">{program.title}</h3>
                     <div className="flex items-center">
                       <Clock className="w-3 h-3 text-white/80 mr-1" />
                       <span className="text-xs text-white/80 font-lato">2 Year Program</span>
                     </div>
                   </div>
                 </div>
-                <div className="p-4">
-                  <div className="flex items-center mb-3">
-                    <div className="bg-[#800020]/10 p-2 rounded-full mr-3 group-hover:bg-[#800020]/20 transition-colors duration-300">
+                <div className="p-5">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-[#800020]/10 p-2.5 rounded-full mr-3 group-hover:bg-[#800020]/20 transition-colors duration-300">
                       {program.icon}
                     </div>
-                    <div className="text-xs sm:text-sm font-bold text-[#800020]/80 font-oswald uppercase tracking-wider flex items-center">
+                    <div className="text-sm font-bold text-[#800020]/80 font-oswald uppercase tracking-wider flex items-center">
                       <Star className="w-3 h-3 text-yellow-500 mr-1" />
                       {program.stats}
                     </div>
                   </div>
-                  <p className="mb-4 text-gray-600 font-lato text-sm">{program.description}</p>
+                  <p className="mb-5 text-gray-600 font-lato text-sm">{program.description}</p>
                   <Link 
                     href={program.link} 
-                    className="inline-flex items-center justify-center w-full bg-[#800020]/10 hover:bg-[#800020] hover:text-white text-[#800020] font-oswald uppercase tracking-wider text-xs sm:text-sm py-2.5 rounded transition-all duration-300 border border-[#800020]/20 hover:border-[#800020] group-hover:shadow-md"
+                    className="inline-flex items-center justify-center w-full bg-[#800020]/10 hover:bg-[#800020] hover:text-white text-[#800020] font-oswald uppercase tracking-wider text-sm py-3 rounded-md transition-all duration-300 border border-[#800020]/20 hover:border-[#800020] group-hover:shadow-md"
                   >
                     LEARN MORE
-                    <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 transition-transform group-hover:translate-x-1" />
+                    <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
             ))}
           </div>
           
-          <div className="text-center mt-8 sm:mt-10">
+          <div className="text-center mt-10 sm:mt-12">
             <Link 
               href="/courses" 
-              className="inline-flex items-center bg-[#800020] hover:bg-[#e63946] text-white px-6 py-2.5 rounded font-oswald uppercase tracking-wider text-sm font-bold transition-all duration-300 shadow-sm hover:shadow-md hover:translate-y-[-2px]"
+              className="inline-flex items-center bg-[#800020] hover:bg-[#9a0026] text-white px-8 py-3 rounded-md font-oswald uppercase tracking-wider text-sm font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:translate-y-[-2px]"
             >
               VIEW ALL PROGRAMS
-              <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+              <ChevronRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section - Enhanced UI */}
-      <section className="py-12 sm:py-16 md:py-20 bg-gray-50 relative overflow-hidden">
+      <section className="py-16 sm:py-20 md:py-24 bg-gray-50 relative overflow-hidden">
         {/* Background decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent"></div>
+        <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent"></div>
         
-        <div className="container mx-auto px-4 relative">
-          <div className="text-center mb-10 sm:mb-12 md:mb-16">
-            <div className="inline-block bg-[#800020]/10 px-3 py-1 rounded-full mb-3 font-oswald tracking-wider text-[#800020] text-xs sm:text-sm">
+        <div className="container mx-auto px-4 sm:px-6 relative">
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-block bg-[#800020]/10 px-4 py-1.5 rounded-full mb-4 font-oswald tracking-wider text-[#800020] text-sm">
               <div className="flex items-center">
-                <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-yellow-500" />
+                <Star className="w-4 h-4 mr-2 text-yellow-500" />
                 <span>STUDENT TESTIMONIALS</span>
               </div>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-oswald uppercase tracking-wider text-[#800020] mb-3 sm:mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-oswald uppercase tracking-wider text-[#800020] mb-4">
               SUCCESS STORIES
             </h2>
-            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-[#800020] to-[#e63946] mx-auto mb-4 sm:mb-6"></div>
-            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto font-lato">
+            <div className="w-20 h-1 bg-gradient-to-r from-[#800020] to-[#e63946] mx-auto mb-6"></div>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto font-lato">
               Hear from our students who have achieved their dreams with our guidance.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {/* Testimonial cards with improved styling */}
             {[
               {
                 name: "Ramesh Shrestha",
@@ -326,52 +330,52 @@ export default function Home() {
                 year: "2021"
               }
             ].map((testimonial, index) => (
-              <div key={index} className="bg-white p-4 sm:p-5 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#800020]/20 relative">
+              <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 hover:border-[#800020]/20 relative">
                 {/* Quote mark */}
-                <div className="absolute top-3 right-3 text-3xl text-gray-200 font-serif">❝</div>
+                <div className="absolute top-4 right-4 text-4xl text-gray-200 font-serif">❝</div>
                 
-                <div className="flex items-start mb-3">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden mr-3 border-2 border-[#e63946] flex-shrink-0">
+                <div className="flex items-start mb-4">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden mr-4 border-2 border-[#e63946] flex-shrink-0 shadow-md">
                     <Image 
                       src={testimonial.image} 
                       alt={testimonial.name}
-                      width={80}
-                      height={80}
+                      width={100}
+                      height={100}
                       className="object-cover w-full h-full"
                     />
                   </div>
                   <div>
-                    <h4 className="font-bold font-montserrat text-[#800020] text-base sm:text-lg">{testimonial.name}</h4>
-                    <p className="text-xs sm:text-sm text-gray-500 font-lato mb-0.5">{testimonial.role}</p>
+                    <h4 className="font-bold font-montserrat text-[#800020] text-lg">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-500 font-lato mb-1">{testimonial.role}</p>
                     <div className="flex items-center">
                       <div className="flex">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="w-3 h-3 text-yellow-500" />
                         ))}
                       </div>
-                      <span className="text-xs text-gray-400 ml-1">Class of {testimonial.year}</span>
+                      <span className="text-xs text-gray-400 ml-2">Class of {testimonial.year}</span>
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-600 italic font-lato text-xs sm:text-sm">&ldquo;{testimonial.quote}&rdquo;</p>
+                <p className="text-gray-600 italic font-lato text-sm leading-relaxed">&ldquo;{testimonial.quote}&rdquo;</p>
               </div>
             ))}
           </div>
           
-          <div className="text-center mt-8 sm:mt-10">
+          <div className="text-center mt-10 sm:mt-12">
             <Link 
               href="/about/testimonials" 
-              className="inline-flex items-center bg-[#800020] hover:bg-[#e63946] text-white px-6 py-2.5 rounded font-oswald uppercase tracking-wider text-sm font-bold transition-all duration-300 shadow-sm hover:shadow-md hover:translate-y-[-2px]"
+              className="inline-flex items-center bg-[#800020] hover:bg-[#9a0026] text-white px-8 py-3 rounded-md font-oswald uppercase tracking-wider text-sm font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:translate-y-[-2px]"
             >
               VIEW MORE SUCCESS STORIES
-              <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+              <ChevronRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
       </section>
 
       {/* Call to Action with Background - Enhanced UI */}
-      <section className="py-12 sm:py-16 relative text-white overflow-hidden">
+      <section className="py-16 sm:py-20 relative text-white overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image 
@@ -381,38 +385,38 @@ export default function Home() {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#800020]/95 to-[#e63946]/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#800020]/95 to-[#9a0026]/90"></div>
         </div>
         
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+        <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
         
-        <div className="container mx-auto px-4 text-center relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-block bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full mb-4 font-oswald tracking-wider text-white text-xs sm:text-sm">
+            <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-full mb-5 font-oswald tracking-wider text-white text-sm shadow-sm">
               <div className="flex items-center">
-                <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-yellow-300" />
+                <Sparkles className="w-4 h-4 mr-2 text-yellow-300" />
                 <span>BEGIN YOUR JOURNEY TO SUCCESS</span>
               </div>
             </div>
             
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-oswald uppercase tracking-wider mb-4 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-oswald uppercase tracking-wider mb-5 sm:mb-6">
               READY TO START YOUR JOURNEY?
             </h2>
-            <p className="text-base sm:text-lg mb-6 sm:mb-8 max-w-3xl mx-auto font-lato">
+            <p className="text-lg mb-8 max-w-3xl mx-auto font-lato">
               Join hundreds of students who have transformed their futures with Urbana. Our expert faculty and proven methodology ensure your success.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/contact" 
-                className="bg-[#800020] hover:bg-[#e63946] text-white px-6 sm:px-8 py-2 sm:py-3 rounded font-oswald uppercase tracking-wider font-bold transition-all duration-300 shadow-sm hover:shadow-md hover:translate-y-[-2px]"
+                className="bg-[#800020] hover:bg-[#9a0026] text-white px-8 py-3.5 rounded-md font-oswald uppercase tracking-wider font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:translate-y-[-2px]"
               >
                 CONTACT US
               </Link>
               <Link 
                 href="/admissions" 
-                className="border-2 border-white bg-transparent hover:bg-white hover:text-[#800020] px-6 sm:px-8 py-2 sm:py-3 rounded font-oswald uppercase tracking-wider font-bold transition-all duration-300 shadow-sm hover:shadow-md hover:translate-y-[-2px]"
+                className="border-2 border-white bg-transparent hover:bg-white hover:text-[#800020] px-8 py-3.5 rounded-md font-oswald uppercase tracking-wider font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:translate-y-[-2px]"
               >
                 APPLY NOW
               </Link>
