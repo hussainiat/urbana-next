@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, Building, Users, Award, MessageSquare, Book, Video, Newspaper, FileText, GraduationCap } from "lucide-react";
+import { Menu, X, ChevronDown} from "lucide-react";
 import { NavLink } from "./navigation/types";
 import { AboutDropdown } from "./navigation/AboutDropdown";
 import { CoursesDropdown } from "./navigation/CoursesDropdown";
