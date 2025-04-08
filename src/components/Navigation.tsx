@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Building, Users, Award, MessageSquare, Book, Video, Newspaper, FileText, GraduationCap } from "lucide-react";
 import { NavLink } from "./navigation/types";
 import { AboutDropdown } from "./navigation/AboutDropdown";
 import { CoursesDropdown } from "./navigation/CoursesDropdown";
@@ -175,67 +175,97 @@ const Navigation = () => {
         </div>
       </div>
       
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       <div 
-        className={`${isMenuOpen ? "block" : "hidden"} md:hidden bg-white border-t border-gray-200`}
+        className={`md:hidden bg-white overflow-hidden transition-all duration-300 ${
+          isMenuOpen ? 'max-h-[80vh] shadow-lg border-t border-gray-100' : 'max-h-0'
+        }`}
       >
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          {navLinks.map((link) => (
-            <div key={link.path}>
-              {link.hasDropdown ? (
-                <>
-                  <button
-                    onClick={() => {
-                      if (link.dropdownType === 'about') {
-                        setAboutDropdownOpen(!aboutDropdownOpen);
-                        if (coursesDropdownOpen) setCoursesDropdownOpen(false);
-                      } else {
-                        setCoursesDropdownOpen(!coursesDropdownOpen);
-                        if (aboutDropdownOpen) setAboutDropdownOpen(false);
-                      }
-                    }}
-                    className={`${getLinkClasses(link.path, true)} w-full text-left flex justify-between items-center`}
+        <div className="px-4 py-2 space-y-1">
+          {/* Main Navigation Links */}
+          <div className="py-2">
+            {navLinks.map((link) => (
+              <div key={link.path}>
+                {link.hasDropdown ? (
+                  <div className="py-1">
+                    <button
+                      onClick={link.dropdownType === 'about' ? toggleAboutDropdown : toggleCoursesDropdown}
+                      className={`${getLinkClasses(link.path, true)} w-full text-left flex items-center justify-between`}
+                    >
+                      {link.name}
+                      <ChevronDown 
+                        className={`ml-1 w-4 h-4 transition-transform ${
+                          (link.dropdownType === 'about' && aboutDropdownOpen) || 
+                          (link.dropdownType === 'courses' && coursesDropdownOpen) 
+                            ? 'rotate-180' 
+                            : ''
+                        }`} 
+                      />
+                    </button>
+                    
+                    {/* Mobile Dropdown Content */}
+                    <div 
+                      className={`pl-4 mt-1 space-y-1 overflow-hidden transition-all duration-300 ${
+                        (link.dropdownType === 'about' && aboutDropdownOpen) || 
+                        (link.dropdownType === 'courses' && coursesDropdownOpen)
+                          ? 'max-h-96' 
+                          : 'max-h-0'
+                      }`}
+                    >
+                      {link.dropdownType === 'about' ? (
+                        <>
+                          {aboutMenuItems.map((item) => (
+                            <Link
+                              key={item.title}
+                              href={item.path}
+                              className="flex items-center gap-2 p-2 rounded-md text-sm text-gray-700 hover:bg-gray-50"
+                              onClick={closeDropdowns}
+                            >
+                              <div className="h-4 w-4 text-[#800020]">{item.icon}</div>
+                              <span>{item.title}</span>
+                            </Link>
+                          ))}
+                        </>
+                      ) : (
+                        <>
+                          {coursesMenuItems.map((item) => (
+                            <Link
+                              key={item.title}
+                              href={item.path}
+                              className="flex items-center gap-2 p-2 rounded-md text-sm text-gray-700 hover:bg-gray-50"
+                              onClick={closeDropdowns}
+                            >
+                              <div className="h-4 w-4 text-[#800020]">{item.icon}</div>
+                              <span>{item.title}</span>
+                            </Link>
+                          ))}
+                        </>
+                      )}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    href={link.path}
+                    className={`${getLinkClasses(link.path, true)} block py-2`}
+                    onClick={closeDropdowns}
                   >
                     {link.name}
-                    <ChevronDown 
-                      className={`w-4 h-4 transition-transform ${
-                        (link.dropdownType === 'about' && aboutDropdownOpen) || 
-                        (link.dropdownType === 'courses' && coursesDropdownOpen) 
-                          ? 'rotate-180' 
-                          : ''
-                      }`}
-                    />
-                  </button>
-                  
-                  {link.dropdownType === 'about' ? (
-                    <AboutDropdown 
-                      isOpen={aboutDropdownOpen} 
-                      onClose={closeDropdowns} 
-                      isMobile={true}
-                    />
-                  ) : (
-                    <CoursesDropdown 
-                      isOpen={coursesDropdownOpen} 
-                      onClose={closeDropdowns} 
-                      isMobile={true}
-                    />
-                  )}
-                </>
-              ) : (
-                <Link
-                  href={link.path}
-                  className={getLinkClasses(link.path, true)}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              )}
-            </div>
-          ))}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+          
+          {/* Quick Links Section removed */}
         </div>
       </div>
     </nav>
   );
 };
 
+// Import the menu items from the dropdown components
+import { aboutMenuItems } from "./navigation/AboutDropdown";
+import { coursesMenuItems } from "./navigation/CoursesDropdown";
+
+// Remove the aboutUsLinks array as we're now using aboutMenuItems from the imported file
 export default Navigation;
