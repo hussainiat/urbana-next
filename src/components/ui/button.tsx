@@ -15,15 +15,13 @@ const buttonVariants = cva(
           "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
           "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
-        secondary:
-          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
         // New variants for admission buttons
-        admission: 
+        primary: 
           "bg-[#800020] text-white shadow-md hover:bg-[#600018] transition-all duration-300",
-        program: 
+        secondary: 
           "bg-white text-[#800020] border border-[#800020] hover:bg-[#800020]/5 transition-all duration-300",
       },
       size: {
@@ -32,7 +30,7 @@ const buttonVariants = cva(
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
         // New size for admission buttons
-        admission: "h-12 px-8 py-3.5 rounded-md font-medium",
+        primary: "h-12 px-8 py-3.5 rounded-md font-medium",
       },
     },
     defaultVariants: {

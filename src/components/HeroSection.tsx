@@ -27,11 +27,11 @@ export default function HeroSection() {
             </p>
             
             <div className="flex flex-wrap gap-4 pt-2">
-              <Button variant="admission" size="admission" asChild>
+              <Button variant="primary" size="primary" asChild>
                 <Link href="/admissions">Apply For Admission</Link>
               </Button>
               
-              <Button variant="program" size="admission" asChild>
+              <Button variant="secondary" size="primary" asChild>
                 <Link href="/courses">Explore Programs</Link>
               </Button>
             </div>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { BookOpen, ChevronRight, Star, Sparkles, GraduationCap, Trophy, Clock, Bell, Calendar, Newspaper } from "lucide-react";
 import ParallaxEffect from '@/components/ParallaxEffect';
 import HeroSection from '@/components/HeroSection';
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -271,13 +272,12 @@ export default function Home() {
           </div>
           
           <div className="text-center mt-10 sm:mt-12">
-            <Link 
-              href="/courses" 
-              className="inline-flex items-center bg-[#800020] hover:bg-[#9a0026] text-white px-8 py-3 rounded-md font-oswald uppercase tracking-wider text-sm font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:translate-y-[-2px]"
-            >
-              VIEW ALL PROGRAMS
-              <ChevronRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-            </Link>
+            <Button variant="primary" size="primary" asChild>
+              <Link href="/courses">
+                VIEW ALL PROGRAMS
+                <ChevronRight className="w-4 h-4 ml-2" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -363,13 +363,12 @@ export default function Home() {
           </div>
           
           <div className="text-center mt-10 sm:mt-12">
-            <Link 
-              href="/about/testimonials" 
-              className="inline-flex items-center bg-[#800020] hover:bg-[#9a0026] text-white px-8 py-3 rounded-md font-oswald uppercase tracking-wider text-sm font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:translate-y-[-2px]"
-            >
-              VIEW MORE SUCCESS STORIES
-              <ChevronRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-            </Link>
+            <Button variant="primary" size="primary" asChild>
+              <Link href="/about/testimonials">
+                VIEW MORE SUCCESS STORIES
+                <ChevronRight className="w-4 h-4 ml-2" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -408,18 +407,18 @@ export default function Home() {
               Join hundreds of students who have transformed their futures with Urbana. Our expert faculty and proven methodology ensure your success.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/contact" 
-                className="bg-[#800020] hover:bg-[#9a0026] text-white px-8 py-3.5 rounded-md font-oswald uppercase tracking-wider font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:translate-y-[-2px]"
-              >
+            <Button variant="primary" size="primary" asChild>
+              <Link href="/contact">
                 CONTACT US
+                <ChevronRight className="w-4 h-4 ml-2" />
               </Link>
-              <Link 
-                href="/admissions" 
-                className="border-2 border-white bg-transparent hover:bg-white hover:text-[#800020] px-8 py-3.5 rounded-md font-oswald uppercase tracking-wider font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:translate-y-[-2px]"
-              >
+            </Button>
+            <Button variant="secondary" size="primary" asChild>
+              <Link href="/admission">
                 APPLY NOW
+                <ChevronRight className="w-4 h-4 ml-2" />
               </Link>
+            </Button>
             </div>
           </div>
         </div>
