@@ -10,12 +10,12 @@ export default function FacultyStaff() {
 
   const facultyMembers = [
     {
-      name: "Rabindra Sharma",
-      position: "Principal",
+      name: "Ram Tiwari",
+      position: "Principal & Physics Faculty",
       department: "Administration",
-      education: "Ph.D. in Education, Harvard University",
-      experience: "25+ years",
-      image: "/images/faculty/principal.jpg"
+      education: "M.Sc. in Physics, Ph.D. in Education",
+      experience: "15+ years",
+      image: "/images/faculty/Ram-Tiwari.jpg"
     },
     {
       name: "Rejina Rai",
@@ -34,14 +34,7 @@ export default function FacultyStaff() {
       image: "/images/faculty/principal.jpg"
     },
     // Physics faculty from the image
-    {
-      name: "Ram Tiwari",
-      position: "Faculty",
-      department: "Physics",
-      education: "M.Sc. in Physics",
-      experience: "10+ years",
-      image: "/images/faculty/Ram-Tiwari.jpg"
-    },
+    
     {
       name: "Michael Dhungana",
       position: "Faculty",

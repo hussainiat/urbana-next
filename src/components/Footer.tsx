@@ -86,7 +86,7 @@ export default function Footer() {
             <ul className="space-y-5 font-lato w-full">
               {[
                 { icon: <MapPin size={18} className="text-[#800020]" />, title: "Address", content: "Kathmandu, Putalisadak", href: null },
-                { icon: <Phone size={18} className="text-[#800020]" />, title: "Phone", content: "5321238, 5321239", href: "tel:5321238" },
+                { icon: <Phone size={18} className="text-[#800020]" />, title: "Phone", content: "5321238, 5321239", href: "tel:+9775321238" },
                 { icon: <Mail size={18} className="text-[#800020]" />, title: "Email", content: "urbana.hss@gmail.com", href: "mailto:urbana.hss@gmail.com" }
               ].map((item, index) => (
                 <li key={index} className="flex items-start w-full">
