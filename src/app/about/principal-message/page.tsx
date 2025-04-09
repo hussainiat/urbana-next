@@ -50,7 +50,7 @@ export default function PrincipalMessage() {
                 Our dedicated faculty members, many of whom are specialists in their respective fields, are committed to providing a supportive and stimulating learning environment. We employ innovative teaching methodologies that bridge theoretical knowledge with practical applications, encouraging students to think beyond textbooks.
               </p>
               <p>
-                In today's rapidly evolving world, scientific literacy and technological competence are more important than ever. Our comprehensive curriculum, well-equipped laboratories, and emphasis on both academic rigor and practical skills ensure that our students are well-prepared for future challenges in medical, engineering, and other scientific fields.
+                In today&apos;s rapidly evolving world, scientific literacy and technological competence are more important than ever. Our comprehensive curriculum, well-equipped laboratories, and emphasis on both academic rigor and practical skills ensure that our students are well-prepared for future challenges in medical, engineering, and other scientific fields.
               </p>
               <p>
                 I invite you to explore our website to learn more about our specialized programs, facilities, and achievements. Better yet, visit our campus to experience firsthand the dynamic learning environment that defines Urbana School of Science.
