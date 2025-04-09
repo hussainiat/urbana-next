@@ -20,12 +20,19 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
+        // New variants for admission buttons
+        admission: 
+          "bg-[#800020] text-white shadow-md hover:bg-[#600018] transition-all duration-300",
+        program: 
+          "bg-white text-[#800020] border border-[#800020] hover:bg-[#800020]/5 transition-all duration-300",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
+        // New size for admission buttons
+        admission: "h-12 px-8 py-3.5 rounded-md font-medium",
       },
     },
     defaultVariants: {

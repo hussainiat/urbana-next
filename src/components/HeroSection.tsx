@@ -1,93 +1,133 @@
 import Link from "next/link";
-import {GraduationCap, Award, Stethoscope, Atom, FlaskConical } from "lucide-react";
-import ClientScienceParticles from '@/components/ClientScienceParticles';
+import { GraduationCap, Microscope, Building2, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   return (
-    <section className="relative text-white min-h-[650px] py-16 sm:py-20 overflow-hidden flex items-center">
-      {/* Clean background with education-themed color */}
-      <div className="absolute inset-0 z-0 bg-[#800020] overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[url('/images/noise.png')] opacity-5 mix-blend-overlay pointer-events-none"></div>
-      </div>
-      
-      <ClientScienceParticles />
-      
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="flex flex-col md:flex-row md:items-center md:gap-10 lg:gap-16">
-          {/* Left column: Heading, paragraph, and CTA buttons */}
-          <div className="w-full md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
-            <div className="inline-block bg-white/10 px-4 py-1.5 rounded-full mb-4 sm:mb-5 font-oswald tracking-wider text-white text-xs sm:text-sm border border-white/20 shadow-sm">
-              <div className="flex items-center">
-                <GraduationCap className="w-4 h-4 text-white mr-2" />
-                <span>PATHWAY TO MEDICAL & ENGINEERING CAREERS</span>
-              </div>
+    <section className="relative bg-white text-black py-16 md:py-24 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="hidden md:block space-y-8">
+            <div className="inline-block bg-[#800020]/10 px-4 py-2 rounded-full mb-2">
+              <span className="text-[#800020] font-medium text-sm flex items-center">
+                <GraduationCap className="w-4 h-4 mr-2" />
+                NEB Affiliated College
+              </span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 font-oswald uppercase tracking-wider leading-tight">
-              Building Future <span className="underline decoration-2 underline-offset-4">Doctors & Engineers</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-oswald tracking-tight leading-none">
+              +2 Science <span className="text-[#800020]">Education</span> for Future Doctors & Engineers
             </h1>
             
-            <p className="text-base md:text-lg mb-6 sm:mb-8 max-w-xl mx-auto md:mx-0 font-lato text-white/90 leading-relaxed">
-              Urbana&apos;s specialized +2 Science program prepares students for success in medical, engineering, and scientific fields with advanced curriculum and practical training.
+            <p className="text-gray-600 text-lg max-w-xl font-lato leading-relaxed">
+              A versatile educational program for aspiring medical and engineering students, 
+              simplifying the preparation process and managing the entire academic journey.
             </p>
             
-            {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
-              <Link 
-                href="/admissions" 
-                className="bg-white text-[#800020] px-5 sm:px-6 py-2.5 sm:py-3 rounded-md font-oswald uppercase tracking-wider font-bold transition-all duration-300 hover:bg-white/90 text-sm shadow-md"
-              >
-                <span className="flex items-center justify-center">
-                  Apply for Admission
-                  <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </span>
-              </Link>
-              <Link 
-                href="/courses" 
-                className="bg-transparent text-white border border-white/30 px-5 sm:px-6 py-2.5 sm:py-3 rounded-md font-oswald uppercase tracking-wider font-bold transition-all duration-300 hover:bg-white/10 text-sm"
-              >
-                Explore Programs
-              </Link>
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Button variant="admission" size="admission" asChild>
+                <Link href="/admissions">Apply For Admission</Link>
+              </Button>
+              
+              <Button variant="program" size="admission" asChild>
+                <Link href="/courses">Explore Programs</Link>
+              </Button>
             </div>
           </div>
           
-          {/* Right column: Stats and features cards */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-white/5 backdrop-blur-sm p-5 sm:p-6 rounded-xl border border-white/10 shadow-lg">
-              {/* Career-focused stats in a professional layout */}
-              <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-5 sm:mb-6">
-                {[
-                  { number: "92%", label: "Medical College Admissions" },
-                  { number: "88%", label: "Engineering Placements" },
-                  { number: "95%", label: "STEM Field Success" }
-                ].map((stat, index) => (
-                  <div key={index} className="bg-white/10 py-3 sm:py-4 px-2 sm:px-3 rounded-lg border border-white/20 hover:border-white/30 transition-all duration-300 flex flex-col items-center justify-center shadow-sm">
-                    <div className="text-xl sm:text-2xl font-bold text-white mb-1">{stat.number}</div>
-                    <div className="text-xs sm:text-sm text-white/80 text-center">{stat.label}</div>
-                  </div>
-                ))}
+          {/* Right Content - Education Card Style Element */}
+          <div className="relative">
+            <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+              {/* Top education icons */}
+              <div className="absolute top-4 right-4 flex space-x-2">
+                <div className="w-8 h-8 rounded-full bg-[#800020] flex items-center justify-center">
+                  <GraduationCap className="w-4 h-4 text-white" />
+                </div>
+                <div className="w-8 h-8 rounded-full bg-[#800020]/80 flex items-center justify-center">
+                  <Microscope className="w-4 h-4 text-white" />
+                </div>
               </div>
               
-              {/* Career path focused features */}
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                {[
-                  { icon: <Stethoscope className="w-5 h-5 text-white" />, text: "Medical Preparation" },
-                  { icon: <Atom className="w-5 h-5 text-white" />, text: "Engineering Pathway" },
-                  { icon: <FlaskConical className="w-5 h-5 text-white" />, text: "Advanced Labs" },
-                  { icon: <Award className="w-5 h-5 text-white" />, text: "Entrance Exam Success" }
-                ].map((feature, index) => (
-                  <div key={index} className="bg-white/10 p-3 sm:p-4 rounded-lg border border-white/20 hover:border-white/30 transition-all duration-300 flex items-center shadow-sm">
-                    <div className="bg-white/20 p-2 rounded-full mr-3 flex-shrink-0">
-                      {feature.icon}
+              <div className="absolute top-6 left-6 flex items-center">
+                <div className="w-12 h-12 rounded-full bg-[#800020] flex items-center justify-center text-white font-bold text-xl">
+                  U
+                </div>
+                <div className="ml-3">
+                  <h3 className="font-bold text-[#800020]">URBANA</h3>
+                  <p className="text-xs text-gray-500">SCHOOL OF SCIENCE</p>
+                </div>
+              </div>
+              
+              {/* Student Image */}
+              <div className="pt-24 px-6 pb-6">
+                <div className="bg-gray-100 rounded-xl overflow-hidden h-64 relative">
+                  <Image 
+                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                    alt="Students studying in laboratory" 
+                    fill 
+                    className="object-cover"
+                  />
+                </div>
+                
+                {/* Academic Info Card */}
+                <div className="bg-white rounded-xl shadow-lg p-6 mt-4 border border-gray-200">
+                  <div className="flex items-start">
+                    <div className="bg-[#800020] text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                      <GraduationCap className="w-5 h-5" />
                     </div>
-                    <span className="text-sm sm:text-base text-white font-medium">{feature.text}</span>
+                    <div>
+                      <h3 className="font-bold text-lg">+2 Science Program</h3>
+                      <p className="text-gray-500 text-sm">NEB Affiliated</p>
+                    </div>
                   </div>
-                ))}
+                  
+                  <div className="mt-4 pt-4 border-t border-gray-200">
+                    <p className="text-xs text-gray-500 uppercase font-medium mb-1">KEY SUBJECTS</p>
+                    <div className="flex flex-wrap gap-2">
+                      {["Physics", "Chemistry", "Biology", "Mathematics", "English", "Computer Science"].map((subject) => (
+                        <span key={subject} className="bg-gray-100 text-xs px-2 py-1 rounded">
+                          {subject}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="mt-4 bg-[#800020]/10 p-3 rounded-md">
+                    <div className="flex justify-between items-center">
+                      <p className="text-xs font-medium text-[#800020]">SUCCESS RATE</p>
+                      <p className="font-bold text-[#800020]">92%</p>
+                    </div>
+                    <div className="w-full bg-gray-200 h-2 rounded-full mt-1">
+                      <div className="bg-[#800020] h-2 rounded-full" style={{ width: '92%' }}></div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+        
+        {/* Feature Pills */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-12">
+          {[
+            { href: "/courses/medical-entrance", icon: <Microscope className="w-5 h-5 mr-3 text-[#800020]" />, text: "Medical Pathway", bgClass: "bg-[#e9ffe9] hover:bg-[#d0ffd0]" },
+            { href: "/courses/engineering-entrance", icon: <Building2 className="w-5 h-5 mr-3 text-[#800020]" />, text: "Engineering Pathway", bgClass: "bg-[#f0e6ff] hover:bg-[#e5d4ff]" },
+            { href: "/courses/success-stories", icon: <GraduationCap className="w-5 h-5 mr-3 text-[#800020]" />, text: "Success Stories", bgClass: "bg-[#fff8e6] hover:bg-[#ffe8b3]" }
+          ].map((pill, index) => (
+            <Link 
+              key={index}
+              href={pill.href} 
+              className={`group ${pill.bgClass} text-black rounded-full py-3 px-6 flex items-center justify-between transition-all duration-300`}
+            >
+              <div className="flex items-center">
+                {pill.icon}
+                <span className="font-medium">{pill.text}</span>
+              </div>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          ))}
         </div>
       </div>
     </section>
