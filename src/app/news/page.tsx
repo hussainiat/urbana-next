@@ -172,7 +172,7 @@ export default function LatestNews() {
           <p className="font-lato text-gray-600">
             Showing <span className="font-semibold">{filteredNews.length}</span> results
             {activeCategory !== "All" && <span> in <span className="text-[#800020] font-semibold">{activeCategory}</span></span>}
-            {searchQuery && <span> for "<span className="text-[#800020] font-semibold">{searchQuery}</span>"</span>}
+            {searchQuery && <span> for &ldquo;<span className="text-[#800020] font-semibold">{searchQuery}</span>&rdquo;</span>}
           </p>
           <div className="flex items-center gap-2">
             <span className="text-sm text-gray-600 font-oswald">SORT BY:</span>
@@ -231,7 +231,7 @@ export default function LatestNews() {
               <Search className="w-6 h-6 text-[#800020]" />
             </div>
             <h3 className="font-montserrat text-xl font-bold mb-2 text-gray-800">No Results Found</h3>
-            <p className="text-gray-600 font-lato mb-6">We couldn't find any news matching your search criteria.</p>
+            <p className="text-gray-600 font-lato mb-6">We couldn&apos;t find any news matching your search criteria.</p>
             <Button 
               variant="outline" 
               onClick={() => {
