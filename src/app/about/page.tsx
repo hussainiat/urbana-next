@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Building2, Target, Users, School, MessageCircle, User, Activity, Image as LucideIcon, ChevronRight, Trophy, Lightbulb, Scale, BookOpen } from "lucide-react";
+import { Building2, Target, Users, School, MessageCircle, User, Activity, Image as LucideIcon, ChevronRight, Trophy, Lightbulb, Scale,} from "lucide-react";
 
 export default function About() {
   const aboutSections = [
@@ -210,7 +210,7 @@ export default function About() {
           <div className="p-8 md:p-12">
             <h2 className="font-montserrat text-3xl font-bold mb-6 text-[#800020]">Student Success</h2>
             <p className="font-lato text-lg mb-4 text-gray-600">
-              At Urbana, we take pride in our students' achievements in various competitive examinations and their admissions to prestigious institutions for higher education.
+              At Urbana, we take pride in our students&apos; achievements in various competitive examinations and their admissions to prestigious institutions for higher education.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               <div className="bg-gray-50 p-4 rounded-lg">

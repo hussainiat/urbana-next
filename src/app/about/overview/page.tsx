@@ -208,7 +208,7 @@ export default function InstituteOverview() {
       <div className="bg-[#800020] text-white rounded-xl p-8 text-center">
         <h2 className="font-montserrat text-2xl font-bold mb-4">Join Our Legacy</h2>
         <p className="font-lato text-lg mb-6 max-w-2xl mx-auto">
-          Become part of Urbana's tradition of excellence and prepare for a successful future in science, medicine, or engineering.
+          Become part of Urbana&apos;s tradition of excellence and prepare for a successful future in science, medicine, or engineering.
         </p>
         <a 
           href="/admissions" 
