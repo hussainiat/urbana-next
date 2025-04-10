@@ -67,7 +67,7 @@ export default function HeroSection() {
                     src="/images/urbana/homepage.JPEG" 
                     alt="Students studying in laboratory" 
                     fill 
-                    className="object-cover object-center object-top"
+                    className="object-cover object-top"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority
                   />
