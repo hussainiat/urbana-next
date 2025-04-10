@@ -41,21 +41,21 @@ export default function Home() {
                     title: "Annual Science Exhibition",
                     date: "May 15, 2023",
                     excerpt: "Students showcased innovative projects at our annual science exhibition, impressing judges and visitors alike.",
-                    image: "https://images.unsplash.com/photo-1712903911024-0503895511b0?q=80&w=800&auto=format&fit=crop",
+                    image: "/images/urbana/IMG_6920.JPEG",
                     category: "Events"
                   },
                   {
                     title: "National Debate Competition Winners",
                     date: "April 28, 2023",
                     excerpt: "Our debate team secured first place in the National Inter-School Debate Competition held in Kathmandu.",
-                    image: "https://images.unsplash.com/photo-1544531585-9847b68c8c86?q=80&w=800&auto=format&fit=crop",
+                    image: "/images/urbana/IMG_6931.JPEG",
                     category: "Achievements"
                   },
                   {
                     title: "New Computer Lab Inauguration",
                     date: "March 10, 2023",
                     excerpt: "State-of-the-art computer lab with 30 new workstations was inaugurated to enhance digital learning.",
-                    image: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=800&auto=format&fit=crop",
+                    image: "/images/urbana/IMG_6925.JPEG",
                     category: "Facilities"
                   }
                 ].map((news, index) => (
