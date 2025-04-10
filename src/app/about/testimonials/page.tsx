@@ -5,56 +5,56 @@ import Image from "next/image";
 export default function Testimonials() {
   const studentTestimonials = [
     {
-      name: "Aarav Sharma",
+      name: "Aayush Sharma",
       course: "Medical Entrance Program",
       year: "2023",
-      quote: "The focused preparation and guidance from Urbana's faculty helped me achieve my dream of getting into a top medical college. The regular mock tests and personalized feedback were invaluable.",
+      quote: "The focused preparation and guidance from Urbana's faculty helped me achieve my dream of getting into a top medical college. The regular mock tests and personalized feedback were invaluable for my MBBS entrance exam.",
       image: "/images/testimonials/student1.jpg",
-      achievement: "Secured admission to AIIMS Delhi"
+      achievement: "Secured admission to Institute of Medicine, Tribhuvan University"
     },
     {
-      name: "Priya Patel",
-      course: "US Scholarship Program",
+      name: "Priya Tamang",
+      course: "International Scholarship Program",
       year: "2022",
-      quote: "Urbana's US scholarship program provided me with comprehensive guidance that made my dream of studying at MIT a reality. From test preparation to application essays, the support was exceptional.",
+      quote: "Urbana's international scholarship program provided me with comprehensive guidance that made my dream of studying abroad a reality. From test preparation to application essays, the support was exceptional.",
       image: "/images/testimonials/student2.jpg",
-      achievement: "Full scholarship at MIT"
+      achievement: "Full scholarship at University of Tokyo"
     },
     {
-      name: "Rohan Gupta",
+      name: "Rohan Gurung",
       course: "Engineering Entrance Program",
       year: "2023",
-      quote: "The problem-solving techniques and regular practice tests at Urbana were instrumental in my success at the engineering entrance. The faculty's dedication and expertise made all the difference.",
+      quote: "The problem-solving techniques and regular practice tests at Urbana were instrumental in my success at the IOE entrance exam. The faculty's dedication and expertise made all the difference in my preparation.",
       image: "/images/testimonials/student3.jpg",
-      achievement: "Ranked 5th in IIT-JEE"
+      achievement: "Ranked in top 10 in IOE entrance exam"
     },
     {
-      name: "Neha Singh",
+      name: "Nisha Shrestha",
       course: "+2 Science",
       year: "2022",
-      quote: "The strong foundation I received during my +2 Science at Urbana prepared me well for higher education. The practical approach to learning and supportive environment helped me excel.",
+      quote: "The strong foundation I received during my +2 Science at Urbana prepared me well for higher education. The practical approach to learning and supportive environment helped me excel in my NEB exams.",
       image: "/images/testimonials/student4.jpg",
-      achievement: "Scored 95% in board exams"
+      achievement: "Scored 3.95 GPA in NEB exams"
     }
   ];
 
   const parentTestimonials = [
     {
       name: "Mr. & Mrs. Sharma",
-      relation: "Parents of Aarav Sharma",
+      relation: "Parents of Aayush Sharma",
       quote: "We are grateful to Urbana for nurturing our son's potential and helping him achieve his dream of becoming a doctor. The regular updates on his progress kept us involved in his educational journey.",
       image: "/images/testimonials/parent1.jpg"
     },
     {
-      name: "Mr. Patel",
-      relation: "Father of Priya Patel",
-      quote: "The guidance provided by Urbana's US scholarship program was exceptional. The team's expertise and dedication helped my daughter secure a full scholarship at MIT, which would have been difficult without their support.",
+      name: "Mr. Tamang",
+      relation: "Father of Priya Tamang",
+      quote: "The guidance provided by Urbana's international scholarship program was exceptional. The team's expertise and dedication helped my daughter secure a full scholarship abroad, which would have been difficult without their support.",
       image: "/images/testimonials/parent2.jpg"
     },
     {
-      name: "Mrs. Gupta",
-      relation: "Mother of Rohan Gupta",
-      quote: "Urbana's faculty not only helped my son excel academically but also instilled important values and discipline that will benefit him throughout life. We couldn't have asked for a better educational institution.",
+      name: "Mrs. Gurung",
+      relation: "Mother of Rohan Gurung",
+      quote: "Urbana's faculty not only helped my son excel academically but also instilled important values and discipline that will benefit him throughout life. We couldn't have asked for a better educational institution in Kathmandu.",
       image: "/images/testimonials/parent3.jpg"
     }
   ];
@@ -140,21 +140,21 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-gray-50 p-6 rounded-lg">
             <blockquote className="font-lato text-gray-600 italic mb-4">
-            &ldquo;The foundation I received at Urbana has been instrumental in my medical career. The emphasis on conceptual understanding rather than rote learning has helped me throughout my professional journey.&ldquo;
+            &ldquo;The foundation I received at Urbana has been instrumental in my medical career. The emphasis on conceptual understanding rather than rote learning has helped me throughout my professional journey at Bir Hospital.&ldquo;
             </blockquote>
             <div>
-              <h3 className="font-montserrat text-lg font-bold text-[#800020]">Dr. Vikram Mehta</h3>
-              <p className="font-oswald text-sm uppercase tracking-wider text-gray-500">Batch of 2015, Cardiologist</p>
+              <h3 className="font-montserrat text-lg font-bold text-[#800020]">Dr. Bikram Maharjan</h3>
+              <p className="font-oswald text-sm uppercase tracking-wider text-gray-500">Batch of 2015, Physician at Bir Hospital</p>
             </div>
           </div>
           
           <div className="bg-gray-50 p-6 rounded-lg">
             <blockquote className="font-lato text-gray-600 italic mb-4">
-            &ldquo;Urbana not only prepared me for academic success but also instilled values that have guided me in my professional life. The mentorship I received from the faculty continues to influence my approach to challenges.&rdquo;
+            &ldquo;Urbana not only prepared me for academic success but also instilled values that have guided me in my professional life. The mentorship I received from the faculty continues to influence my approach to challenges in my engineering career.&rdquo;
             </blockquote>
             <div>
-              <h3 className="font-montserrat text-lg font-bold text-[#800020]">Anjali Desai</h3>
-              <p className="font-oswald text-sm uppercase tracking-wider text-gray-500">Batch of 2016, Software Engineer at Google</p>
+              <h3 className="font-montserrat text-lg font-bold text-[#800020]">Anisha Basnet</h3>
+              <p className="font-oswald text-sm uppercase tracking-wider text-gray-500">Batch of 2016, Engineer at Nepal Telecom</p>
             </div>
           </div>
         </div>

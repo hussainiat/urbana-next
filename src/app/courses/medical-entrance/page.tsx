@@ -5,10 +5,10 @@ export default function MedicalEntrance() {
   return (
     <CourseTemplate
       title="Medical Entrance Preparation"
-      description="Our specialized program prepares students for medical entrance examinations with comprehensive coverage of subjects and extensive practice."
+      description="Our specialized program prepares students for medical entrance examinations in Nepal with comprehensive coverage of subjects and extensive practice."
       icon={<Stethoscope className="w-8 h-8 text-[#800020]" />}
       features={[
-        "Focused preparation for NEET, AIIMS, and other medical entrance exams",
+        "Focused preparation for IOM, BPKIHS, KU, and other Nepali medical entrance exams",
         "Expert faculty with experience in medical entrance coaching",
         "Regular mock tests simulating actual exam conditions",
         "Detailed analysis of test performance and personalized feedback",
@@ -18,15 +18,15 @@ export default function MedicalEntrance() {
       highlights={[
         {
           title: "Subject Expertise",
-          description: "In-depth coverage of Physics, Chemistry, and Biology with focus on application-based questions."
+          description: "In-depth coverage of Physics, Chemistry, and Biology with focus on application-based questions as per Nepali medical entrance patterns."
         },
         {
           title: "Test Series",
-          description: "Extensive practice with chapter-wise, subject-wise, and full-length mock tests."
+          description: "Extensive practice with chapter-wise, subject-wise, and full-length mock tests based on previous IOM and BPKIHS patterns."
         },
         {
           title: "Doubt Clearing",
-          description: "Regular doubt clearing sessions and one-on-one interactions with faculty."
+          description: "Regular doubt clearing sessions and one-on-one interactions with faculty who understand Nepal's medical education system."
         }
       ]}
       curriculum={[
@@ -44,7 +44,7 @@ export default function MedicalEntrance() {
         },
         {
           title: "Exam Preparation",
-          topics: ["MCQ Practice", "Previous Year Papers", "Time Management", "Exam Strategies"]
+          topics: ["MCQ Practice", "Previous Year IOM Papers", "Time Management", "Exam Strategies"]
         }
       ]}
     />

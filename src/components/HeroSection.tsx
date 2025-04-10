@@ -64,7 +64,7 @@ export default function HeroSection() {
               <div className="pt-24 px-6 pb-6">
                 <div className="bg-gray-100 rounded-xl overflow-hidden h-64 relative">
                   <Image 
-                    src="/images/urbana/homepage.jpeg" 
+                    src="/images/urbana/homepage.JPEG" 
                     alt="Students studying in laboratory" 
                     fill 
                     className="object-cover object-center object-top"
