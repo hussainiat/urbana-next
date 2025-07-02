@@ -357,7 +357,7 @@ export default function Home() {
                   <div className="mb-4">
                     <div className="text-3xl text-gray-200 font-serif mb-2">❝</div>
                     <p className="text-[#800020] font-semibold italic text-lg font-montserrat leading-relaxed">
-                      &rdquo{admin.quote}&ldquo
+                      {admin.quote}
                     </p>
                   </div>
                   
