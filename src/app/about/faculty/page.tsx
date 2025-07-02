@@ -32,7 +32,7 @@ export default function FacultyStaff() {
       department: "Administration",
       education: "M.Sc. in Physics, Ph.D. in Education",
       experience: "15+ years",
-      image: "/images/faculty/Dr-Madhav-Rijal.jpg"
+      image: "/images/faculty/madhav.jpg"
     },
 
 
@@ -146,7 +146,7 @@ export default function FacultyStaff() {
       department: "Biology",
       education: "Ph.D. in Zoology",
       experience: "10+ years",
-      image: "/images/faculty/Dr-Madhav-Rijal.jpg"
+      image: "/images/faculty/madhav.jpg"
     },
     {
       name: "Kamal Nepal",

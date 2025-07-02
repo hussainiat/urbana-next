@@ -282,6 +282,106 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Administration Messages Section - Enhanced UI */}
+      <section className="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-0 right-0 w-80 h-80 bg-[#800020]/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#e63946]/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 relative">
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-block bg-[#800020]/10 px-4 py-1.5 rounded-full mb-4 font-oswald tracking-wider text-[#800020] text-sm">
+              <div className="flex items-center">
+                <GraduationCap className="w-4 h-4 mr-2 text-[#e63946]" />
+                <span>LEADERSHIP MESSAGES</span>
+              </div>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-oswald uppercase tracking-wider text-[#800020] mb-4">
+              FROM OUR ADMINISTRATION
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-[#800020] to-[#e63946] mx-auto mb-6"></div>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto font-lato">
+              Messages from our dedicated leadership team committed to your educational journey.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+            {/* Administration message cards */}
+            {[
+              {
+                name: "Dr. Navin K. Sharma",
+                role: "Director",
+                image: "/images/faculty/navin.png",
+                quote: "Study to be a person, not just a bookworm.",
+                message: "At Urbana School of Science, we believe education is more than memorizing textbooks or scoring high marks—it's about shaping character, developing critical thinking, and understanding the world with empathy and purpose. Being a true learner means applying knowledge in real life, communicating effectively, solving problems, and growing as a responsible, ethical, compassionate individual.",
+                highlight: "holistic development"
+              },
+              {
+                name: "Ram Tiwari",
+                role: "Principal",
+                image: "/images/faculty/Ram-Tiwari.jpg",
+                quote: "Success is not measured by how you compare to others but by how far you've come.",
+                message: "True success isn't found in competition with others—it lies in personal growth, perseverance, and the progress you've made on your own journey. At Urbana School of Science, we believe that each student has a unique path, shaped by their background, struggles, and determination. We encourage students to focus on their own milestones and celebrate every step forward.",
+                highlight: "personal growth"
+              },
+              {
+                name: "Dr. Madhav Rijal",
+                role: "HOD Pre-medical Program",
+                image: "/images/faculty/madhav.jpg",
+                quote: "We're committed to delivering quality education, strategic preparation, and personalized support.",
+                message: "Welcome to the Premedical Program at Urbana School of Science. Our goal is to mentor aspiring medical students and prepare them for competitive entrance exams in Nepal and beyond. With an MBBS from IOM and years of coaching experience, we specialize in entrance classes, effective study plans, and seminars that strengthen students' concepts and exam skills.",
+                highlight: "medical excellence"
+              }
+            ].map((admin, index) => (
+              <div key={index} className="bg-gray-50 rounded-xl shadow-sm overflow-hidden border border-gray-200 hover:shadow-md transition-all duration-300 hover:border-[#800020]/30 group">
+                {/* Header with profile */}
+                <div className="bg-gradient-to-r from-[#800020] to-[#9a0026] p-6 text-white relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                  <div className="relative z-10">
+                    <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-3 border-white/30 shadow-lg">
+                      <Image 
+                        src={admin.image} 
+                        alt={admin.name}
+                        width={80}
+                        height={80}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <h3 className="font-bold font-montserrat text-xl text-center mb-1">{admin.name}</h3>
+                    <p className="text-white/90 text-sm font-oswald uppercase tracking-wider text-center">{admin.role}</p>
+                  </div>
+                </div>
+                
+                {/* Quote */}
+                <div className="p-6 bg-white">
+                  <div className="mb-4">
+                    <div className="text-3xl text-gray-200 font-serif mb-2">❝</div>
+                    <p className="text-[#800020] font-semibold italic text-lg font-montserrat leading-relaxed">
+                      "{admin.quote}"
+                    </p>
+                  </div>
+                  
+                  {/* Message content */}
+                  <div className="space-y-3">
+                    <p className="text-gray-600 text-sm font-lato leading-relaxed">
+                      {admin.message}
+                    </p>
+                    
+                    <div className="flex items-center pt-2">
+                      <div className="bg-[#800020]/10 px-3 py-1 rounded-full">
+                        <span className="text-xs font-oswald uppercase tracking-wider text-[#800020]">
+                          Focus: {admin.highlight}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section - Enhanced UI */}
       <section className="py-16 sm:py-20 md:py-24 bg-gray-50 relative overflow-hidden">
         {/* Background decorative elements */}
