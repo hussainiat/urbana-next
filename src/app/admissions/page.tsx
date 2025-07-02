@@ -8,32 +8,7 @@ export default function Admissions() {
           Join our community of learners and embark on a journey of academic excellence and personal growth.
         </p>
       </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-          <h2 className="font-montserrat text-2xl font-bold mb-4 text-[#800020]">Admission Process</h2>
-          <ol className="font-lato space-y-3 list-decimal pl-5">
-            <li className="pl-2">Complete the online application form</li>
-            <li className="pl-2">Submit required documents</li>
-            <li className="pl-2">Pay application fee</li>
-            <li className="pl-2">Attend entrance examination (if applicable)</li>
-            <li className="pl-2">Participate in interview (if shortlisted)</li>
-            <li className="pl-2">Receive admission decision</li>
-          </ol>
-        </div>
-        
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-          <h2 className="font-montserrat text-2xl font-bold mb-4 text-[#800020]">Required Documents</h2>
-          <ul className="font-lato space-y-3 list-disc pl-5">
-            <li className="pl-2">Completed application form</li>
-            <li className="pl-2">Academic transcripts</li>
-            <li className="pl-2">Proof of identity</li>
-            <li className="pl-2">Passport-sized photographs</li>
-            <li className="pl-2">Letters of recommendation</li>
-            <li className="pl-2">Statement of purpose</li>
-          </ul>
-        </div>
-      </div>
+    
       
       <div className="bg-white shadow-lg rounded-lg p-8 mb-12 border border-gray-100">
         <h2 className="font-montserrat text-2xl font-bold mb-6 text-[#800020] text-center">Online Registration Form</h2>
