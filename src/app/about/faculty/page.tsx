@@ -10,6 +10,14 @@ export default function FacultyStaff() {
 
   const facultyMembers = [
     {
+      name: "Dr. Navin K. Sharma",
+      position: "Director",
+      department: "Administration",
+      education: "Ph.D. in Education, Harvard University",
+      experience: "25+ years",
+      image: "/images/faculty/navin.png"
+    },
+    {
       name: "Ram Tiwari",
       position: "Principal & Physics Faculty",
       department: "Administration",
@@ -17,22 +25,17 @@ export default function FacultyStaff() {
       experience: "15+ years",
       image: "/images/faculty/Ram-Tiwari.jpg"
     },
+
     {
-      name: "Rejina Rai",
-      position: "Vice Principal",
+      name: "Dr. Madhav Rijal",
+      position: "HOD Pre-medical",
       department: "Administration",
-      education: "Ph.D. in Education, Harvard University",
-      experience: "25+ years",
-      image: "/images/faculty/principal.jpg"
+      education: "M.Sc. in Physics, Ph.D. in Education",
+      experience: "15+ years",
+      image: "/images/faculty/Dr-Madhav-Rijal.jpg"
     },
-    {
-      name: "Ram S Dani",
-      position: "Academic Director",
-      department: "Administration",
-      education: "Ph.D. in Education, Harvard University",
-      experience: "25+ years",
-      image: "/images/faculty/principal.jpg"
-    },
+
+
     // Physics faculty from the image
     
     {

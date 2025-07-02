@@ -36,131 +36,21 @@ export default function Admissions() {
       </div>
       
       <div className="bg-white shadow-lg rounded-lg p-8 mb-12 border border-gray-100">
-        <h2 className="font-montserrat text-2xl font-bold mb-4 text-[#800020]">Application Form</h2>
-        <p className="font-lato mb-6 text-gray-600">Fill out the form below to start your application process.</p>
-        
-        <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="md:col-span-2 bg-gray-50 p-6 rounded-lg border border-gray-100">
-            <h3 className="font-montserrat text-lg font-bold mb-4 text-[#800020]">Personal Information</h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="font-lato block mb-2 font-medium text-gray-700">Full Name</label>
-                <input 
-                  type="text" 
-                  className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#800020]/20 focus:border-[#800020] transition-all" 
-                  placeholder="Enter your full name"
-                />
-              </div>
-              
-              <div>
-                <label className="font-lato block mb-2 font-medium text-gray-700">Date of Birth</label>
-                <input 
-                  type="date" 
-                  className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#800020]/20 focus:border-[#800020] transition-all" 
-                />
-              </div>
-              
-              <div>
-                <label className="font-lato block mb-2 font-medium text-gray-700">Phone</label>
-                <input 
-                  type="tel" 
-                  className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#800020]/20 focus:border-[#800020] transition-all" 
-                  placeholder="Enter your phone number"
-                />
-              </div>
-              
-              <div>
-                <label className="font-lato block mb-2 font-medium text-gray-700">Email</label>
-                <input 
-                  type="email" 
-                  className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#800020]/20 focus:border-[#800020] transition-all" 
-                  placeholder="Enter your email address"
-                />
-              </div>
-            </div>
-          </div>
-          
-          <div className="md:col-span-2 bg-gray-50 p-6 rounded-lg border border-gray-100">
-            <h3 className="font-montserrat text-lg font-bold mb-4 text-[#800020]">Academic Information</h3>
-            
-            <div className="mb-4">
-              <label className="font-lato block mb-2 font-medium text-gray-700">Program Interested In</label>
-              <select className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#800020]/20 focus:border-[#800020] transition-all">
-                <option value="">Select a program</option>
-                <option value="plus-two-science">+2 Science</option>
-                <option value="medical-entrance">Medical Entrance</option>
-                <option value="engineering-entrance">Engineering Entrance</option>
-                <option value="us-scholarships">US University Scholarships</option>
-              </select>
-            </div>
-            
-            <div>
-              <label className="font-lato block mb-2 font-medium text-gray-700">Previous Academic Information</label>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div>
-                  <input 
-                    type="text" 
-                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#800020]/20 focus:border-[#800020] transition-all" 
-                    placeholder="School Name"
-                  />
-                </div>
-                <div>
-                  <select 
-                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#800020]/20 focus:border-[#800020] transition-all"
-                  >
-                    <option value="">Select Grade/Class</option>
-                    <option value="10">SEE/SLC</option>
-                    <option value="11">Grade 11</option>
-                    <option value="12">Grade 12</option>
-                  </select>
-                </div>
-                <div>
-                  <input 
-                    type="text" 
-                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#800020]/20 focus:border-[#800020] transition-all" 
-                    placeholder="Percentage/GPA"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="md:col-span-2 bg-gray-50 p-6 rounded-lg border border-gray-100">
-            <h3 className="font-montserrat text-lg font-bold mb-4 text-[#800020]">Additional Information</h3>
-            
-            <div>
-              <label className="font-lato block mb-2 font-medium text-gray-700">Additional Message</label>
-              <textarea 
-                rows={4} 
-                className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#800020]/20 focus:border-[#800020] transition-all"
-                placeholder="Any additional information you'd like to share"
-              ></textarea>
-            </div>
-            
-            <div className="mt-4">
-              <div className="flex items-center mb-4">
-                <input 
-                  type="checkbox" 
-                  id="terms" 
-                  className="w-4 h-4 text-[#800020] border-gray-300 rounded focus:ring-[#800020]" 
-                />
-                <label htmlFor="terms" className="ml-2 font-lato text-gray-700">
-                  I agree to the <a href="/terms" className="text-[#800020] hover:underline">terms and conditions</a>
-                </label>
-              </div>
-            </div>
-          </div>
-          
-          <div className="md:col-span-2 text-center mt-4">
-            <button 
-              type="submit" 
-              className="font-oswald bg-[#800020] hover:bg-[#e63946] text-white px-10 py-3 rounded-md uppercase tracking-wider transition-colors shadow-sm hover:shadow-md"
-            >
-              Submit Application
-            </button>
-          </div>
-        </form>
+        <h2 className="font-montserrat text-2xl font-bold mb-6 text-[#800020] text-center">Online Registration Form</h2>
+        <div className="w-full h-[800px] border border-gray-200 rounded-lg overflow-hidden">
+          <iframe
+            src="https://registration.paathshala.com.np/online/urbana"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            title="Paathshala Registration Form"
+            className="w-full h-full"
+            style={{ minHeight: '800px' }}
+          />
+        </div>
+        <p className="font-lato text-sm text-gray-500 mt-4 text-center">
+          Having trouble with the form? <a href="https://registration.paathshala.com.np/online/urbana" target="_blank" rel="noopener noreferrer" className="text-[#800020] hover:underline">Open in new window</a>
+        </p>
       </div>
       
       <div className="bg-gray-50 rounded-lg p-8 text-center border border-gray-100 shadow-sm">
