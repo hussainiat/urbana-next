@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Search, Trophy, User, Calendar, Award, Loader2 } from "lucide-react";
+import { Search, Trophy, User, Calendar, Award, Loader2, FileText, Eye, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { loadExamResults, type ExamResult, type ResultData } from "@/lib/csvParser";
 
 const availableExams = [
-  { value: "entrance-2025", label: "Entrance cum Scholarship Exam 2025" },
+  { value: "entrance-2025", label: "ENTRANCE cum SCHOLARSHIP EXAM Result Held on 2082-03-19" },
 ];
 
 export default function Results() {
@@ -86,6 +86,60 @@ export default function Results() {
           Select an exam and enter your Roll Number to view your results
         </p>
       </div>
+
+      {/* Result Notice PDF Section */}
+      <Card className="bg-white shadow-lg border border-gray-100 mb-12">
+        <CardHeader>
+          <CardTitle className="font-montserrat text-2xl font-bold text-[#800020] flex items-center gap-2">
+            <FileText className="w-6 h-6" />
+            Result Notice
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 bg-gradient-to-r from-gray-50 to-blue-50 rounded-lg border border-gray-200">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                <FileText className="w-6 h-6 text-red-600" />
+              </div>
+              <div>
+                <h3 className="font-montserrat text-lg font-bold text-gray-800 mb-1">
+                  Official Result Notice
+                </h3>
+                <p className="text-gray-600 text-sm mb-2">
+                  Download the complete result notice for ENTRANCE cum SCHOLARSHIP EXAM Result Held on 2082-03-19 with detailed information about the examination.
+                </p>
+                <p className="text-xs text-gray-500">
+                  File format: PDF • Last updated: {new Date().toLocaleDateString()}
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+              <Button
+                onClick={() => window.open('/results/result-notice.pdf', '_blank')}
+                variant="outline"
+                className="border-[#800020] text-[#800020] hover:bg-[#800020] hover:text-white font-montserrat font-semibold flex items-center gap-2"
+              >
+                <Eye className="w-4 h-4" />
+                View PDF
+              </Button>
+              <Button
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/results/result-notice.pdf';
+                  link.download = 'result-notice.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+                className="bg-[#800020] hover:bg-[#600018] text-white font-montserrat font-semibold flex items-center gap-2"
+              >
+                <Download className="w-4 h-4" />
+                Download PDF
+              </Button>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
         {/* Search Your Results Section */}
@@ -214,6 +268,8 @@ export default function Results() {
           </CardContent>
         </Card>
       </div>
+
+      
 
       {/* Instructions Section */}
       <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200">
