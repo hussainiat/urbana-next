@@ -40,7 +40,7 @@ const Navigation = () => {
     { name: "About Us", path: "/about", hasDropdown: true, dropdownType: 'about' },
     { name: "Courses", path: "/courses", hasDropdown: true, dropdownType: 'courses' },
     { name: "Admissions", path: "/admissions" },
-    { name: "Student Zone", path: "/student-zone" },
+    { name: "Results", path: "/results" },
     { name: "Contact", path: "/contact" },
   ];
 
