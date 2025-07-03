@@ -12,7 +12,6 @@ export interface ExamResult {
 
 export async function parseCSV(csvContent: string): Promise<ResultData[]> {
   const lines = csvContent.trim().split('\n');
-  const headers = lines[0].split(',').map(h => h.trim());
   
   const results: ResultData[] = [];
   

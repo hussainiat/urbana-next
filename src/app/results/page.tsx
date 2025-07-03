@@ -232,7 +232,7 @@ export default function Results() {
               </div>
               <div className="text-center">
                 <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mx-auto mb-2">3</div>
-                <p className="font-lato text-sm text-gray-700">Click 'Search Results' to view your score and rank</p>
+                <p className="font-lato text-sm text-gray-700">Click &apos;Search Results&apos; to view your score and rank</p>   
               </div>
             </div>
           </div>
