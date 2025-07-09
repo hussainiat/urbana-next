@@ -1,4 +1,4 @@
-import { Building2, Target, Users, School, MessageSquare, User, Activity, Image as LucideIcon } from "lucide-react";
+import { Building2, Target, Users, School, MessageSquare, User, Trophy, Activity, Image as LucideIcon } from "lucide-react";
 import { MenuItem } from "@/components/navigation/types";
 import { MegaMenu } from "@/components/navigation/MegaMenu";
 import { MobileMenuItems } from "@/components/navigation/MobileMenuItems";
@@ -53,6 +53,12 @@ export const aboutMenuItems: MenuItem[] = [
     title: "Gallery",
     description: "Browse photos from our campus events and activities",
     path: "/about/gallery"
+  },
+  {
+    icon: <Trophy className="w-5 h-5 text-[#800020]" />,
+    title: "Achievements",
+    description: "Browse photos from our campus events and activities",
+    path: "/about/achievements"
   }
 ];
 
