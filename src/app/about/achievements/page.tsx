@@ -16,7 +16,7 @@ export default function Achievements() {
          },
          {
            name: "Anish Kumar Sah Teli",
-           achievement: "MBBS - Bangladesh, Scholarship - MECEE 2025",
+           achievement: "MBBS - Bangladesh Scholarship MECEE 2025",
            image: "/images/achievements/anish.png"
          }
       ]
@@ -28,17 +28,17 @@ export default function Achievements() {
       achievers: [
         {
            name: "Raunak Karn",
-           achievement: "Rank 107 - Indian Embassy, Complex Scholarship",
+           achievement: "Rank 107 - Indian Embassy COMPEX Scholarship",
            image: "/images/achievements/raunak.png"
          },
          {
            name: "Khagendra Neupane",
-           achievement: "Rank 108 - IOE",
+           achievement: "Rank 108 - IOE Engineering Entrance",
            image: "/images/achievements/khagendra.png"
          },
          {
-           name: "Navraaj Bhandari",
-           achievement: "Rank 145 - IOE",
+           name: "Navaraj Bhandari",
+           achievement: "Rank 145 - IOE Engineering Entrance",
            image: "/images/achievements/navraaj.png"
          }
       ]

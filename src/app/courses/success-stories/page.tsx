@@ -4,28 +4,34 @@ import Image from 'next/image';
 export default function SuccessStories() {
   const successStories = [
     {
-      name: "Aarav Sharma",
-      achievement: "Secured 1st rank in National Medical Entrance Exam",
+      name: "Ranvir Sah",
+      achievement: "MBBS - Merit 65, CEE Entrance 2024",
       quote: "The focused preparation and guidance from Urbana's faculty helped me achieve my dream of getting into a top medical college.",
-      image: "/images/student1.jpg"
+      image: "/images/achievements/ranvir.png"
     },
     {
-      name: "Priya Patel",
-      achievement: "Selected for full scholarship at MIT",
-      quote: "Urbana's US scholarship program provided me with comprehensive guidance that made my dream of studying at MIT a reality.",
-      image: "/images/student2.jpg"
+      name: "Anish Kumar Sah Teli",
+      achievement: "MBBS - Bangladesh Scholarship MECEE 2024",
+      quote: "Urbana's international scholarship program provided me with comprehensive guidance that made my dream of studying abroad a reality.",
+      image: "/images/achievements/anish.png"
     },
     {
-      name: "Rohan Gupta",
-      achievement: "Topped the IOE Entrance Examination",
+      name: "Raunak Karn",
+      achievement: "Rank 107 - Indian Embassy COMPEX Scholarship",
       quote: "The problem-solving techniques and regular practice tests at Urbana were instrumental in my success at the engineering entrance.",
-      image: "/images/student3.jpg"
+      image: "/images/achievements/raunak.png"
     },
     {
-      name: "Neha Singh",
-      achievement: "Secured admission to Harvard University",
-      quote: "The personalized guidance for my application essays and interview preparation made all the difference in my Harvard acceptance.",
-      image: "/images/student4.jpg"
+      name: "Khagendra Neupane",
+      achievement: "Rank 108 - IOE Engineering Entrance",
+      quote: "The personalized guidance and comprehensive study materials at Urbana made all the difference in my IOE entrance success.",
+      image: "/images/achievements/khagendra.png"
+    },
+    {
+      name: "Navaraj Bhandari",
+      achievement: "Rank 145 - IOE Engineering Entrance",
+      quote: "Urbana's dedicated faculty and structured approach helped me achieve my goal of getting into IOE for engineering studies.",
+      image: "/images/achievements/navraaj.png"
     }
   ];
 
@@ -64,49 +70,6 @@ export default function SuccessStories() {
             </div>
           </div>
         ))}
-      </div>
-      
-      <div className="bg-white p-8 rounded-lg shadow-md border border-gray-100 mb-12">
-        <h2 className="font-montserrat text-2xl font-bold mb-6 text-[#800020] text-center">Our Achievements</h2>
-        
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div className="p-4">
-            <div className="text-4xl font-bold text-[#800020] mb-2">500+</div>
-            <p className="font-lato text-gray-600">Medical Entrance Selections</p>
-          </div>
-          <div className="p-4">
-            <div className="text-4xl font-bold text-[#800020] mb-2">300+</div>
-            <p className="font-lato text-gray-600">Engineering Entrance Selections</p>
-          </div>
-          <div className="p-4">
-            <div className="text-4xl font-bold text-[#800020] mb-2">100+</div>
-            <p className="font-lato text-gray-600">International Scholarships</p>
-          </div>
-          <div className="p-4">
-            <div className="text-4xl font-bold text-[#800020] mb-2">95%</div>
-            <p className="font-lato text-gray-600">Success Rate</p>
-          </div>
-        </div>
-      </div>
-      
-      <div className="bg-gray-50 p-8 rounded-lg shadow-md border border-gray-100 mb-12">
-        <h2 className="font-montserrat text-2xl font-bold mb-6 text-[#800020]">Testimonials from Parents</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <blockquote className="font-lato text-gray-600 italic mb-4">
-            &ldquo;The dedicated faculty at Urbana not only helped my daughter excel academically but also instilled important values and discipline that will benefit her throughout life.&rdquo;
-            </blockquote>
-            <p className="font-montserrat font-bold text-[#800020]">- Mrs. Sharma, Parent</p>
-          </div>
-          
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <blockquote className="font-lato text-gray-600 italic mb-4">
-            &ldquo;We were impressed by the personalized attention given to each student. The regular updates on our son&apos;s progress helped us stay involved in his education journey.&rdquo;
-            </blockquote>
-            <p className="font-montserrat font-bold text-[#800020]">- Mr. Patel, Parent</p>
-          </div>
-        </div>
       </div>
       
       <div className="bg-white rounded-lg p-8 text-center border border-gray-100 shadow-sm">

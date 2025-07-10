@@ -257,25 +257,25 @@ export default function Home() {
             {/* Testimonial cards with improved styling */}
             {[
               {
-                name: "Ramesh Shrestha",
-                role: "MBBS Student, TU Teaching Hospital",
+                name: "Ranvir Sah",
+                role: "MBBS Student - Merit 65, CEE Entrance 2025",
                 quote: "Urbana's medical entrance program gave me the edge I needed to secure my seat in medical school. The faculty's guidance was invaluable.",
-                image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
-                year: "2022"
+                image: "/images/achievements/ranvir.png",
+                year: "2024"
               },
               {
-                name: "Sita Gurung",
-                role: "Engineering Student, Pulchowk Campus",
-                quote: "The dedicated faculty and structured curriculum helped me crack the IOE entrance exam. I'm grateful for the personalized attention.",
-                image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
-                year: "2023"
+                name: "Anish Kumar Sah Teli",
+                role: "MBBS Student - Bangladesh Scholarship MECEE 2025",
+                quote: "The dedicated faculty and structured curriculum helped me crack the medical entrance exam. I'm grateful for the personalized attention.",
+                image: "/images/achievements/anish.png",
+                year: "2024"
               },
               {
-                name: "Hari Basnet",
-                role: "Scholarship Recipient, University of Texas",
-                quote: "Thanks to Urbana's guidance, I received a full scholarship to study in the USA. Their international education counseling is exceptional.",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
-                year: "2021"
+                name: "Raunak Karn",
+                role: "Engineering Student - Rank 107, Indian Embassy COMPEX Scholarship",
+                quote: "Thanks to Urbana's guidance, I received a scholarship to study engineering. Their international education counseling is exceptional.",
+                image: "/images/achievements/raunak.png",
+                year: "2024"
               }
             ].map((testimonial, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 hover:border-[#800020]/20 relative">

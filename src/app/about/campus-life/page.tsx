@@ -40,22 +40,34 @@ export default function CampusLife() {
 
   const studentTestimonials = [
     {
-      name: "Aarav Sharma",
-      grade: "Grade 12 Science",
+      name: "Ranvir Sah",
+      grade: "Medical Entrance Program",
       quote: "Life at Urbana is a perfect balance of academics and practical learning. The modern laboratory facilities have helped me develop a deeper understanding of scientific concepts.",
-      image: "/images/urbana/IMG_6928.JPEG"
+      image: "/images/achievements/ranvir.png"
     },
     {
-      name: "Priya Patel",
+      name: "Anish Kumar Sah Teli",
       grade: "Medical Entrance Program",
       quote: "What I love most about Urbana is the personalized guidance from teachers. Their support has been instrumental in my preparation for medical entrance exams.",
-      image: "/images/urbana/IMG_6929.JPEG"
+      image: "/images/achievements/anish.png"
     },
     {
-      name: "Rohan Gupta",
+      name: "Raunak Karn",
       grade: "Engineering Entrance Program",
       quote: "The collaborative learning environment at Urbana has taught me the importance of teamwork and communication, skills that will be valuable in my engineering career.",
-      image: "/images/urbana/IMG_6930.JPEG"
+      image: "/images/achievements/raunak.png"
+    },
+    {
+      name: "Khagendra Neupane",
+      grade: "Engineering Entrance Program",
+      quote: "The problem-solving approach and regular assessments at Urbana helped me build confidence for the IOE entrance examination.",
+      image: "/images/achievements/khagendra.png"
+    },
+    {
+      name: "Navaraj Bhandari",
+      grade: "Engineering Entrance Program",
+      quote: "Urbana's comprehensive study materials and dedicated faculty support made my engineering entrance preparation effective and successful.",
+      image: "/images/achievements/navraaj.png"
     }
   ];
 
