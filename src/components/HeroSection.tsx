@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GraduationCap, Microscope, Building2, ArrowRight, Calendar, Clock } from "lucide-react";
+import { GraduationCap, Microscope, Building2, ArrowRight, Calendar, Clock, Phone } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
@@ -38,6 +38,7 @@ export default function HeroSection() {
                   <span className="font-medium">Time: 11:30 AM</span>
                 </div>
                 <div className="flex items-center">
+                  <Phone className="w-4 h-4 mr-2" />
                   <span className="font-medium">Contact: 01-5321238 / 5321239</span>
                 </div>
               </div>
