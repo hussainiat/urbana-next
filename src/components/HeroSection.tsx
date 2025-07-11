@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GraduationCap, Microscope, Building2, ArrowRight } from "lucide-react";
+import { GraduationCap, Microscope, Building2, ArrowRight, Calendar, Clock } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
@@ -25,10 +25,27 @@ export default function HeroSection() {
               A versatile educational program for aspiring medical and engineering students, 
               simplifying the preparation process and managing the entire academic journey.
             </p>
+
+            <div className="bg-[#800020] text-white p-4 rounded-lg mt-4 mb-4">
+              <h2 className="text-xl font-bold mb-2">ADMISSION ONGOING</h2>
+              <div className="flex flex-col space-y-2">
+                <div className="flex items-center">
+                  <Calendar className="w-4 h-4 mr-2" />
+                  <span className="font-medium">Entrance Exam: Ashar 29 | Sunday</span>
+                </div>
+                <div className="flex items-center">
+                  <Clock className="w-4 h-4 mr-2" />
+                  <span className="font-medium">Time: 11:30 AM</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="font-medium">Contact: 01-5321238 / 5321239</span>
+                </div>
+              </div>
+            </div>
             
             <div className="flex flex-wrap gap-4 pt-2">
               <Button variant="primary" size="primary" asChild>
-                <Link href="/admissions">Apply For Admission</Link>
+                <Link href="/admissions">Enroll Now</Link>
               </Button>
               
               <Button variant="secondary" size="primary" asChild>
@@ -104,6 +121,19 @@ export default function HeroSection() {
                     <div className="w-full bg-gray-200 h-2 rounded-full mt-1">
                       <div className="bg-[#800020] h-2 rounded-full" style={{ width: '92%' }}></div>
                     </div>
+                  </div>
+                  
+                  <div className="mt-4 flex justify-between items-center">
+                    <div className="flex items-center">
+                      <div className="bg-[#800020] text-white rounded-full w-8 h-8 flex items-center justify-center mr-2">
+                        <span className="font-bold">+2</span>
+                      </div>
+                      <span className="text-sm font-medium">SCIENCE</span>
+                    </div>
+                    <Link href="/admissions" className="text-[#800020] text-sm font-medium hover:underline flex items-center">
+                      <span>Admission Details</span>
+                      <ArrowRight className="w-4 h-4 ml-1" />
+                    </Link>
                   </div>
                 </div>
               </div>
