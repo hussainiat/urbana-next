@@ -326,7 +326,7 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image 
-            src="https://images.unsplash.com/photo-1517486808906-6ca8b3f8e1c1?q=80&w=2000&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?q=80&w=500&auto=format&fit=crop"
             alt="Campus" 
             fill 
             sizes="100vw"
