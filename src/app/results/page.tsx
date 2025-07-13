@@ -103,7 +103,51 @@ export default function Results() {
               </div>
               <div>
                 <h3 className="font-montserrat text-lg font-bold text-gray-800 mb-1">
-                  Official Result Notice
+                  Official Result Notice - 2082-03-29
+                </h3>
+                <p className="text-gray-600 text-sm mb-2">
+                  Download the complete result notice for ENTRANCE cum SCHOLARSHIP EXAM Result Held on 2082-03-29 with detailed information about the examination.
+                </p>
+                <p className="text-xs text-gray-500">
+                  File format: PDF • Last updated: {new Date().toLocaleDateString()}
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+              <Button
+                onClick={() => window.open('/results/result-notice-03-29.pdf', '_blank')}
+                variant="outline"
+                className="border-[#800020] text-[#800020] hover:bg-[#800020] hover:text-white font-montserrat font-semibold flex items-center gap-2"
+              >
+                <Eye className="w-4 h-4" />
+                View PDF
+              </Button>
+              <Button
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/results/result-notice-03-29.pdf';
+                  link.download = 'result-notice-03-29.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+                className="bg-[#800020] hover:bg-[#600018] text-white font-montserrat font-semibold flex items-center gap-2"
+              >
+                <Download className="w-4 h-4" />
+                Download PDF
+              </Button>
+            </div>
+          </div>
+        </CardContent>
+        <CardContent>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 bg-gradient-to-r from-gray-50 to-blue-50 rounded-lg border border-gray-200">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                <FileText className="w-6 h-6 text-red-600" />
+              </div>
+              <div>
+                <h3 className="font-montserrat text-lg font-bold text-gray-800 mb-1">
+                  Official Result Notice - 2082-03-19
                 </h3>
                 <p className="text-gray-600 text-sm mb-2">
                   Download the complete result notice for ENTRANCE cum SCHOLARSHIP EXAM Result Held on 2082-03-19 with detailed information about the examination.
