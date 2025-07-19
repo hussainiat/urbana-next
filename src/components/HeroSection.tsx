@@ -26,23 +26,7 @@ export default function HeroSection() {
               simplifying the preparation process and managing the entire academic journey.
             </p>
 
-            <div className="bg-[#800020] text-white p-3 sm:p-4 rounded-lg mt-4 mb-4">
-              <h2 className="text-lg sm:text-xl font-bold mb-2">ADMISSION ONGOING</h2>
-              <div className="flex flex-col space-y-2">
-                <div className="flex items-center">
-                  <Calendar className="w-3 h-3 sm:w-4 sm:h-4 mr-2 flex-shrink-0" />
-                  <span className="font-medium text-sm sm:text-base">Entrance Exam: Ashar 29 | Sunday</span>
-                </div>
-                <div className="flex items-center">
-                  <Clock className="w-3 h-3 sm:w-4 sm:h-4 mr-2 flex-shrink-0" />
-                  <span className="font-medium text-sm sm:text-base">Time: 11:30 AM</span>
-                </div>
-                <div className="flex items-center">
-                  <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-2 flex-shrink-0" />
-                  <span className="font-medium text-sm sm:text-base">Contact: 01-5321238 / 5321239</span>
-                </div>
-              </div>
-            </div>
+            
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
               <Button variant="primary" size="primary" asChild className="w-full sm:w-auto">
