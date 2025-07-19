@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GraduationCap, Microscope, Building2, ArrowRight, Calendar, Clock, Phone } from "lucide-react";
+import { GraduationCap, Microscope, Building2, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
