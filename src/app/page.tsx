@@ -14,6 +14,69 @@ export default function Home() {
       {/* Hero Section Component */}
       <HeroSection />
 
+      <section className="py-12 sm:py-16 md:py-20 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-[#800020]/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#e63946]/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+        <div className="container mx-auto px-4 sm:px-6 relative">
+          <div className="text-center mb-8 sm:mb-12">
+            <div className="inline-block bg-[#800020]/10 px-4 py-1.5 rounded-full mb-4 font-oswald tracking-wider text-[#800020] text-sm">
+              <div className="flex items-center justify-center">
+                <Trophy className="w-4 h-4 mr-2 text-yellow-500" />
+                <span>MANY CONGRATULATIONS</span>
+              </div>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-oswald uppercase tracking-wider text-[#800020]">
+              MBBS Full Scholarship Winners
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-[#800020] to-[#e63946] mx-auto mt-4"></div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {[
+              { name: "Sabin Tripathi", image: "/images/achievements/sabin.jpeg" },
+              { name: "Ananta Basyal", image: "/images/achievements/ananta.jpeg"  },
+              { name: "Biki Adhikari", image: "/images/achievements/biki.jpeg" },
+              { name: "Altaf Ali Ansari", image: "/images/achievements/altaf.jpeg"  },
+              { name: "Sandesh Budha", image: "/images/achievements/sandesh.jpeg"  },
+              { name: "Sunil Darnal", image: "/images/achievements/sunil.jpeg"  },
+            ].map((winner) => {
+              const initials = winner.name.split(' ').map((n) => n[0]).slice(0,2).join('');
+              return (
+                <div key={winner.name} className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 hover:shadow-md transition-all duration-300 hover:border-[#800020]/30 group p-6 text-center">
+                  <div className="mx-auto w-20 h-20 rounded-full overflow-hidden shadow-sm">
+                    {winner.image ? (
+                      <Image 
+                        src={winner.image}
+                        alt={winner.name}
+                        width={80}
+                        height={80}
+                        className="object-cover w-full h-full"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-[#800020] to-[#e63946] flex items-center justify-center text-white font-montserrat text-2xl font-bold">
+                        {initials}
+                      </div>
+                    )}
+                  </div>
+                  <h3 className="font-montserrat text-lg sm:text-xl font-bold mt-4 text-[#800020] uppercase tracking-wider">
+                    {winner.name}
+                  </h3>
+                  <p className="font-oswald text-[#800020] uppercase tracking-wider">Urbana</p>
+                </div>
+              );
+            })}
+          </div>
+          <div className="mt-8 sm:mt-10">
+            <div className="rounded-xl bg-[#800020] text-white px-6 py-5 text-center shadow-sm">
+              <p className="font-montserrat text-base sm:text-lg font-semibold">
+                Small batch, big dreams, and even bigger achievements!
+              </p>
+              <p className="font-lato text-sm sm:text-base mt-1">
+                Cheers to our MBBS scholarship achievers for making us proud!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Featured Programs Section with enhanced UI */}
       <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-gradient-to-b from-white to-gray-50">
