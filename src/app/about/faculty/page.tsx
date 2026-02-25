@@ -10,6 +10,14 @@ export default function FacultyStaff() {
 
   const facultyMembers = [
     {
+      name: "Rabindra Sharma",
+      position: "Chairman",
+      department: "Administration",
+      education: "Ph.D. in Education, Harvard University",
+      experience: "25+ years",
+      image: "/images/faculty/rabindra.png"
+    },
+    {
       name: "Dr. Navin K. Sharma",
       position: "Director",
       department: "Administration",
