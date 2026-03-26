@@ -32,12 +32,12 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
-              { name: "Sabin Tripathi", image: "/images/achievements/sabin.jpeg" },
-              { name: "Ananta Basyal", image: "/images/achievements/ananta.jpeg"  },
-              { name: "Biki Adhikari", image: "/images/achievements/biki.jpeg" },
-              { name: "Altaf Ali Ansari", image: "/images/achievements/altaf.jpeg"  },
-              { name: "Sandesh Budha", image: "/images/achievements/sandesh.jpeg"  },
-              { name: "Sunil Darnal", image: "/images/achievements/sunil.jpeg"  },
+              { name: "Sabin Tripathi", image: "/images/achievements/mbbs/sabin.jpeg" },
+              { name: "Ananta Basyal", image: "/images/achievements/mbbs/ananta.jpeg"  },
+              { name: "Biki Adhikari", image: "/images/achievements/mbbs/biki.jpeg" },
+              { name: "Altaf Ali Ansari", image: "/images/achievements/mbbs/altaf.jpeg"  },
+              { name: "Sandesh Budha", image: "/images/achievements/mbbs/sandesh.jpeg"  },
+              { name: "Sunil Darnal", image: "/images/achievements/mbbs/sunil.jpeg"  },
             ].map((winner) => {
               const initials = winner.name.split(' ').map((n) => n[0]).slice(0,2).join('');
               return (
@@ -323,21 +323,21 @@ export default function Home() {
                 name: "Ranvir Sah",
                 role: "MBBS Student - Merit 65, CEE Entrance 2025",
                 quote: "Urbana's medical entrance program gave me the edge I needed to secure my seat in medical school. The faculty's guidance was invaluable.",
-                image: "/images/achievements/ranvir.png",
+                image: "/images/achievements/mbbs/ranvir.png",
                 year: "2024"
               },
               {
                 name: "Anish Kumar Sah Teli",
                 role: "MBBS Student - Bangladesh Scholarship MECEE 2025",
                 quote: "The dedicated faculty and structured curriculum helped me crack the medical entrance exam. I'm grateful for the personalized attention.",
-                image: "/images/achievements/anish.png",
+                image: "/images/achievements/mbbs/anish.png",
                 year: "2024"
               },
               {
                 name: "Raunak Karn",
                 role: "Engineering Student - Rank 107, Indian Embassy COMPEX Scholarship",
                 quote: "Thanks to Urbana's guidance, I received a scholarship to study engineering. Their international education counseling is exceptional.",
-                image: "/images/achievements/raunak.png",
+                image: "/images/achievements/mbbs/raunak.png",
                 year: "2024"
               }
             ].map((testimonial, index) => (
