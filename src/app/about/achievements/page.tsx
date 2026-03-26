@@ -39,7 +39,7 @@ const engineering2025 = [
     name: "Navaraj Bhandari",
     detail: "Rank 145 · IOE Engineering Entrance",
     badge: "IOE",
-    image: "/images/achievements/mmbs/navraaj.png",
+    image: "/images/achievements/mbbs/navraaj.png",
   },
 ];
 
