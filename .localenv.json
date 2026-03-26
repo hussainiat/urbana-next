@@ -1,0 +1,18 @@
+{
+  "name": "Urbana",
+  "version": "0.1.0",
+  "created": "2026-03-26T00:21:00.780Z",
+  "splitView": true,
+  "services": [
+    {
+      "id": "urbana",
+      "name": "Urbana",
+      "type": "node",
+      "workingDir": "/Users/anwarhussain/src/Urbana",
+      "startCommand": "npm run dev -- --port $PORT",
+      "port": 3000,
+      "dependsOn": [],
+      "env": ".env"
+    }
+  ]
+}

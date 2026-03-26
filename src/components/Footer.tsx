@@ -1,4 +1,5 @@
-import { MapPin, Phone, Mail, Twitter, Facebook, Youtube, Linkedin, Instagram, ChevronRight } from "lucide-react";
+import { MapPin, Phone, Mail, ChevronRight } from "lucide-react";
+import { FaXTwitter, FaFacebook, FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa6";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -20,11 +21,11 @@ export default function Footer() {
           
           <div className="flex space-x-5">
             {[
-              { icon: <Twitter size={18} />, href: "#" },
-              { icon: <Facebook size={18} />, href: "#" },
-              { icon: <Instagram size={18} />, href: "#" },
-              { icon: <Youtube size={18} />, href: "#" },
-              { icon: <Linkedin size={18} />, href: "#" }
+              { icon: <FaXTwitter size={18} />,    href: "#" },
+              { icon: <FaFacebook size={18} />,    href: "#" },
+              { icon: <FaInstagram size={18} />,   href: "#" },
+              { icon: <FaYoutube size={18} />,     href: "#" },
+              { icon: <FaLinkedinIn size={18} />,  href: "#" },
             ].map((social, index) => (
               <a 
                 key={index}
@@ -59,14 +60,14 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 font-lato grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
               {[
-                { name: "Home", href: "/" },
-                { name: "About Us", href: "/about" },
-                { name: "Courses", href: "/courses" },
-                { name: "Admissions", href: "/admissions" },
+                { name: "Home",         href: "/" },
+                { name: "About Us",     href: "/about" },
+                { name: "Courses",      href: "/courses" },
+                { name: "Admissions",   href: "/admissions" },
                 { name: "Student Zone", href: "/student-zone" },
-                { name: "Contact", href: "/contact" },
-                { name: "Gallery", href: "/about/gallery" },
-                { name: "News & Events", href: "/news" }
+                { name: "Contact",      href: "/contact" },
+                { name: "Gallery",      href: "/about/gallery" },
+                { name: "News & Events",href: "/news" },
               ].map((link, index) => (
                 <li key={index}>
                   <Link href={link.href} className="text-gray-600 hover:text-[#800020] transition-colors flex items-center group">
@@ -86,8 +87,8 @@ export default function Footer() {
             <ul className="space-y-5 font-lato w-full">
               {[
                 { icon: <MapPin size={18} className="text-[#800020]" />, title: "Address", content: "Kathmandu, Putalisadak", href: null },
-                { icon: <Phone size={18} className="text-[#800020]" />, title: "Phone", content: "5321238, 5321239", href: "tel:+9775321238" },
-                { icon: <Mail size={18} className="text-[#800020]" />, title: "Email", content: "urbana.hss@gmail.com", href: "mailto:urbana.hss@gmail.com" }
+                { icon: <Phone size={18} className="text-[#800020]" />,  title: "Phone",   content: "5321238, 5321239",        href: "tel:+9775321238" },
+                { icon: <Mail  size={18} className="text-[#800020]" />,  title: "Email",   content: "urbana.hss@gmail.com",    href: "mailto:urbana.hss@gmail.com" },
               ].map((item, index) => (
                 <li key={index} className="flex items-start w-full">
                   <div className="w-11 h-11 rounded-full bg-gray-100 flex items-center justify-center mr-6 flex-shrink-0 shadow-sm">
