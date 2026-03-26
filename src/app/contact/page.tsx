@@ -1,4 +1,5 @@
-import { MapPin, Phone, Mail, Twitter, Facebook, Youtube, Linkedin, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { FaXTwitter, FaFacebook, FaYoutube, FaLinkedinIn } from "react-icons/fa6";
 
 export default function Contact() {
   return (
@@ -66,18 +67,20 @@ export default function Contact() {
             <div className="border-t border-gray-200 pt-6">
               <h3 className="font-montserrat text-xl font-bold mb-4 text-[#800020]">Follow Us</h3>
               <div className="flex space-x-4">
-                <a href="#" className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-[#800020] hover:bg-[#800020] hover:text-white transition-colors duration-300">
-                  <Twitter size={20} />
-                </a>
-                <a href="#" className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-[#800020] hover:bg-[#800020] hover:text-white transition-colors duration-300">
-                  <Facebook size={20} />
-                </a>
-                <a href="#" className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-[#800020] hover:bg-[#800020] hover:text-white transition-colors duration-300">
-                  <Youtube size={20} />
-                </a>
-                <a href="#" className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-[#800020] hover:bg-[#800020] hover:text-white transition-colors duration-300">
-                  <Linkedin size={20} />
-                </a>
+                {[
+                  { icon: <FaXTwitter size={20} />,   href: "#" },
+                  { icon: <FaFacebook size={20} />,   href: "#" },
+                  { icon: <FaYoutube size={20} />,    href: "#" },
+                  { icon: <FaLinkedinIn size={20} />, href: "#" },
+                ].map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-[#800020] hover:bg-[#800020] hover:text-white transition-colors duration-300"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
