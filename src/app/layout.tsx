@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Montserrat, Lato, Oswald } from "next/font/google";
+import { Montserrat, Lato, Oswald, Geist } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
 
 // Add the new fonts
 const montserrat = Montserrat({
@@ -36,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={cn("scroll-smooth", "font-sans", geist.variable)}>
       <body
         className={`${montserrat.variable} ${lato.variable} ${oswald.variable} font-lato antialiased bg-soft-gray text-dark-gray`}
       >
