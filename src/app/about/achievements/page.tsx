@@ -12,13 +12,13 @@ const mbbs2025 = [
     name: "Ranvir Sah",
     detail: "Merit 65 · CEE Entrance 2025",
     badge: "MBBS",
-    image: "/images/achievements/ranvir.png",
+    image: "/images/achievements/mbbs/ranvir.png",
   },
   {
     name: "Anish Kumar Sah Teli",
     detail: "Bangladesh Scholarship · MECEE 2025",
     badge: "MBBS",
-    image: "/images/achievements/anish.png",
+    image: "/images/achievements/mbbs/anish.png",
   },
 ];
 
@@ -27,19 +27,19 @@ const engineering2025 = [
     name: "Raunak Karn",
     detail: "Rank 107 · Indian Embassy COMPEX Scholarship",
     badge: "IOE",
-    image: "/images/achievements/raunak.png",
+    image: "/images/achievements/mbbs/raunak.png",
   },
   {
     name: "Khagendra Neupane",
     detail: "Rank 108 · IOE Engineering Entrance",
     badge: "IOE",
-    image: "/images/achievements/khagendra.png",
+    image: "/images/achievements/mbbs/khagendra.png",
   },
   {
     name: "Navaraj Bhandari",
     detail: "Rank 145 · IOE Engineering Entrance",
     badge: "IOE",
-    image: "/images/achievements/navraaj.png",
+    image: "/images/achievements/mmbs/navraaj.png",
   },
 ];
 
