@@ -1,5 +1,6 @@
 import { MapPin, Phone, Mail, ChevronRight } from "lucide-react";
 import { FaXTwitter, FaFacebook, FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa6";
+import PairwingLogo from "@pairwing/react-logo";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -110,8 +111,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="font-lato text-gray-600 mb-4 md:mb-0">© {new Date().getFullYear()} Urbana School of Science. All rights reserved.</p>
+        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="font-lato text-gray-600 md:mb-0">© {new Date().getFullYear()} Urbana School of Science. All rights reserved.</p>
+          <div className="flex items-center gap-2 font-lato text-sm text-gray-600">
+            <span>Made by:</span>
+            <PairwingLogo className="light" width={120} newTab />
+          </div>
           <div className="flex space-x-6 text-sm text-gray-500">
             <Link href="/privacy-policy" className="hover:text-[#800020] transition-colors">Privacy Policy</Link>
             <Link href="/terms-of-service" className="hover:text-[#800020] transition-colors">Terms of Service</Link>
